@@ -1,5 +1,10 @@
 """
-This script is for offline Augmentation purposes.
+This script is for offline Augmentation purposes. It depends on the parameters withing augment_config.yaml
+
+When calling this File:
+- It will create a new folder given as parameter TO_FOLDER
+- Make a transformed copy of all images from 'FROM_FOLDEr' to 'TO_FOLDER'
+- Create a new dataframe with the new filenames which is adaption of the given dataframe 'DF_PATH_FROM'
 """
 import os
 import time
@@ -20,7 +25,7 @@ class RandomAugmentor(object):
     """
     
     augmentations = {
-        'gray': transforms.Grayscale(num_output_channels=1),
+        'gray': transforms.Grayscale(num_output_channels=3),
         'jit': transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
         'fliph': transforms.RandomHorizontalFlip(p=1),
         'flipv': transforms.RandomVerticalFlip(p=1),
@@ -139,15 +144,30 @@ if __name__ == '__main__':
     user_input = input('Want Proceed? (y/n)  ')
     if user_input == 'y':
         print(20*'-', f'Start at {time.ctime()}',20*'-')
-        
+        # Initiate Transformation Classes
         base_transforms = transforms.Compose([transforms.CenterCrop(conf['IMAGE_SIZE']-conf['REDUCE_PIXEL_CROP']),
                                           transforms.Resize(conf['RESIZE'])])
         random_augmenter = RandomAugmentor(apply_n=conf['RANDOM_APPLY_N'],
                                        reuse_transform=conf['RANDOM_REUSE_TRANSFORM'],
                                        replace_sample=conf['RANDOM_REPLACE'])
         
+        # Call Multiprocessing 
         pool = Pool(processes=conf['N_PROCESSES'])
         for _ in tqdm(pool.imap_unordered(_transform_image, mp_iterable), total=len(mp_iterable)):
             pass
         
         print(20*'-', f'End at {time.ctime()}', 20*'-')
+        # Change Labelled Dataframe with given new name of dataframe due to transformations
+        print(50*'=')
+        print('Creating Copy of labelled Dataframe with new ID')
+        df = pd.read_csv(conf['DF_PATH_FROM'])
+        
+        # Extract old id name without ending (always first element when split _)
+        df['image'] = df['image'].apply(lambda x: x.split('.')[0])
+        
+        # Create dict for replacement
+        id_to_new = {i.split('_')[0]:i for i in os.listdir(conf['TO_FOLDER'])}
+        df['image'] = df['image'].replace(id_to_new)
+        
+        df.to_csv(conf['DF_PATH_TO'], index=False)
+        
