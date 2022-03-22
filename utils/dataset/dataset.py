@@ -1,16 +1,17 @@
 import torch
-import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset
-import torchvision.transforms as transforms
 import PIL
 import os
+from torchvision import transforms as transforms
 import pandas as pd
+
 
 class MHCoverDataset(Dataset):
     """
     Class defines custom Dataset as a workaround to the ImageFolder class
     """
-    def __init__(self, root_dir: str, df: pd.DataFrame, transform: 'Compose' = None,
+
+    def __init__(self, root_dir: str, df: pd.DataFrame, transform: type(transforms.Compose) = None,
                  label_indexer: str = 'concatenated_type'):
         """
         Initializes the dataset class.
@@ -66,7 +67,7 @@ class MHCoverDataset(Dataset):
         return image, label
 
 
-def get_dataloader(root_dir: str, df: pd.DataFrame, transforms: 'torch.utils.Compose',
+def get_dataloader(root_dir: str, df: pd.DataFrame, transforms_: type(transforms.Compose),
                    batch_size: int, workers: int):
     """
     Function returns a dataloader with given parameters
@@ -89,7 +90,7 @@ def get_dataloader(root_dir: str, df: pd.DataFrame, transforms: 'torch.utils.Com
         Amount of CPU workers for the loading of data into gpu.
     """
 
-    custom_dataset = MHCoverDataset(root_dir=root_dir, df=df, transform=transforms)
+    custom_dataset = MHCoverDataset(root_dir=root_dir, df=df, transform=transforms_)
 
     return DataLoader(dataset=custom_dataset,
                       batch_size=batch_size,
