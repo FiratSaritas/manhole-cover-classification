@@ -11,7 +11,7 @@ class MHCoverDataset(Dataset):
     Class defines custom Dataset as a workaround to the ImageFolder class
     """
 
-    def __init__(self, root_dir: str, df: pd.DataFrame, transform: type(transforms.Compose) = None,
+    def __init__(self, root_dir: str, df: pd.DataFrame, transform: 'transforms.Compose' = None,
                  label_indexer: str = 'concatenated_type'):
         """
         Initializes the dataset class.
@@ -41,7 +41,7 @@ class MHCoverDataset(Dataset):
 
     def _init_images(self):
         """Matches Data in Folder with the ones in the filtered pd.DataFrame"""
-        all_images = [img for img in os.listdir(self.root_dir) if '.jpg' in img]
+        all_images = [img for img in os.listdir(self.root_dir) if '.png' in img]
         self.df = self.df[self.df['image'].isin(all_images)]
 
         return self.df['image'].to_list()
@@ -62,12 +62,12 @@ class MHCoverDataset(Dataset):
             image = self.transform(image)
 
         # Load label
-        label = self.df.loc[idx, self.label_indexer]
-
+        label = self.df.loc[self.df['image'] == self._images[idx], self.label_indexer].to_list()
+                
         return image, label
 
 
-def get_dataloader(root_dir: str, df: pd.DataFrame, transforms_: type(transforms.Compose),
+def get_dataloader(root_dir: str, df: pd.DataFrame, transformations: 'transforms.Compose',
                    batch_size: int, workers: int):
     """
     Function returns a dataloader with given parameters
@@ -90,7 +90,7 @@ def get_dataloader(root_dir: str, df: pd.DataFrame, transforms_: type(transforms
         Amount of CPU workers for the loading of data into gpu.
     """
 
-    custom_dataset = MHCoverDataset(root_dir=root_dir, df=df, transform=transforms_)
+    custom_dataset = MHCoverDataset(root_dir=root_dir, df=df, transform=transformations)
 
     return DataLoader(dataset=custom_dataset,
                       batch_size=batch_size,
