@@ -87,10 +87,11 @@ class RandomAugmentor(object):
         """Returns transformation keys"""
         return self.current_transforms
     
-    def transform_given_key(self, image: PIL, given_k):
+    def transform_given_key(self, image: PIL, given_key):
         """Transforms an image given a key."""
-        transform = self._get_transformation_given_k(given_k=given_k)
-        image = transform(image)
+        if given_key:
+            transform = self._get_transformation_given_k(given_k=given_key)
+            image = transform(image)
 
         return image
            
