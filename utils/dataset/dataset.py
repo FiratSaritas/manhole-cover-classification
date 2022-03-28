@@ -4,6 +4,7 @@ import PIL
 import os
 from torchvision import transforms as transforms
 import pandas as pd
+import numpy as np
 
 
 class MHCoverDataset(Dataset):
@@ -12,7 +13,7 @@ class MHCoverDataset(Dataset):
     """
 
     def __init__(self, root_dir: str, df: pd.DataFrame, transform: 'transforms.Compose' = None,
-                 label_indexer: str = 'concatenated_type'):
+                 label_indexer: str = 'label'):
         """
         Initializes the dataset class.
 
@@ -22,7 +23,7 @@ class MHCoverDataset(Dataset):
             Defines the path from where all images should be imported from
 
         df: pd.DataFrame
-            Prefiltered Dataframe to load labels from (filtered according to Train-Val-test set)
+            Prefiltered!! Dataframe to load labels from (filtered according to Train-Val-test set)
 
         transform: torch.utils.transforms.Compose
             Compose of different transforms applied during import of an image.
@@ -37,14 +38,34 @@ class MHCoverDataset(Dataset):
         self.df = df
         self.transform = transform
         self.label_indexer = label_indexer
-        self._images = self._init_images()
-
-    def _init_images(self):
-        """Matches Data in Folder with the ones in the filtered pd.DataFrame"""
-        all_images = [img for img in os.listdir(self.root_dir) if '.png' in img]
-        self.df = self.df[self.df['image'].isin(all_images)]
-
-        return self.df['image'].to_list()
+        self.label_dict = None
+        self.label_dict_r = None
+        self._images = None
+        self._init_attributes()
+        
+    def _init_attributes(self):
+        """
+        - Creates Dictionary for Label Encoding
+        - Matches Data in Folder with the ones in the filtered pd.DataFrame
+        """
+        # Label dict
+        self.label_dict = {label:i for i, label in enumerate(self.df[self.label_indexer].unique())}
+        self.label_dict_r = {i:label for label, i in self.label_dict.items()}
+        
+        # Load images
+        all_images = np.array([img for img in os.listdir(self.root_dir) if '.png' in img])
+        # Only select thos images within the dataframe
+        mask = np.isin(all_images, self.df['filename'].to_numpy()) 
+        self._images = all_images[mask]
+        assert self.df.shape[0] == self._images.shape[0]
+        
+        return self
+    
+    def label_encode(self, X):
+        if type(X) == list:
+            return [self.label_dict_r[lab] for lab in X]
+        else:
+            return self.label_dict_r[X]
 
     def __len__(self):
         """Returns length of Dataset"""
@@ -56,19 +77,20 @@ class MHCoverDataset(Dataset):
             idx = idx.tolist()
 
         # Load image
-        img_name = os.path.join(self.root_dir, self._images[idx])
-        image = PIL.Image.open(img_name)
+        img_path = os.path.join(self.root_dir, self._images[idx])
+        image = PIL.Image.open(img_path)
         if self.transform:
             image = self.transform(image)
 
         # Load label
-        label = self.df.loc[self.df['image'] == self._images[idx], self.label_indexer].to_list()
+        label = self.df.loc[self.df['filename'] == self._images[idx], self.label_indexer].to_list()
+        assert len(label) == 1
                 
-        return image, label
+        return image, self.label_dict[label[0]]
 
 
 def get_dataloader(root_dir: str, df: pd.DataFrame, transformations: 'transforms.Compose',
-                   batch_size: int, workers: int):
+                   batch_size: int, workers: int, **kwargs):
     """
     Function returns a dataloader with given parameters
 
@@ -90,8 +112,10 @@ def get_dataloader(root_dir: str, df: pd.DataFrame, transformations: 'transforms
         Amount of CPU workers for the loading of data into gpu.
     """
 
-    custom_dataset = MHCoverDataset(root_dir=root_dir, df=df, transform=transformations)
+    custom_dataset = MHCoverDataset(root_dir=root_dir, df=df, 
+                                    transform=transformations)
 
     return DataLoader(dataset=custom_dataset,
                       batch_size=batch_size,
-                      num_workers=workers)
+                      num_workers=workers, 
+                      **kwargs)
