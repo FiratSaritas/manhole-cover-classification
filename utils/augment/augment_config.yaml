@@ -1,8 +1,7 @@
 # Location Params
-FROM_FOLDER: '../../data/images_transformed'
+FROM_FOLDER: '../../data/images_transformed/'
 TO_FOLDER: '../../data/prepared_images/'
-DF_PATH_FROM: '../../data/transformation_split.csv'
-#DF_PATH_TO: '../../data/split_prepared_images.csv'
+DF_PATH: '../../data/transformation_split.csv'
 
 # Transformation Params
 ## Current IMage size
@@ -17,5 +16,5 @@ RANDOM_REPLACE: False
 RANDOM_REUSE_TRANSFORM: False
 
 # Multiprocessing parmas
-N_PROCESSES: 4
+N_PROCESSES: 5
 TEST_ONLY: False
