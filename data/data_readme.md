@@ -5,7 +5,7 @@
 
 This file shows all data when it was labelled.
 
-- `image`: Name of the image in the original image (PK)
+- `image`: Name of the image in the original image __(PK)__
 - `type`: Labelled type of the image
 - `subtype`: Labelled subtype of the image
 
@@ -18,6 +18,6 @@ This is a pre-processed dataframe which originates from `labels.csv`. This file 
 - `transforms`: Applied transformations
 - `label`: Concatenation of type and subtype from original dataframe
 - `set`: Indicator for Train-Val-Testset
-- `filename`: Filename after offline augmentation
+- `filename`: Filename after offline augmentation __(PK)__
 
 
