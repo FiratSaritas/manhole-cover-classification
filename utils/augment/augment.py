@@ -5,6 +5,7 @@ When calling this File:
 - It will create a new folder given as parameter TO_FOLDER
 - Make a transformed copy of all images from 'FROM_FOLDEr' to 'TO_FOLDER'
 - Create a new dataframe with the new filenames which is adaption of the given dataframe 'DF_PATH_FROM'
+
 """
 import os
 import time
@@ -24,17 +25,8 @@ class RandomAugmentor(object):
     This class implements random transformation functions from torchvision.
     """
     
-    augmentations = {
-        'gray': transforms.Grayscale(num_output_channels=3),
-        'jit': transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
-        'fliph': transforms.RandomHorizontalFlip(p=1),
-        'flipv': transforms.RandomVerticalFlip(p=1),
-        'pers': transforms.RandomPerspective(distortion_scale=0.5, p=1, fill=0),
-        'rot': transforms.RandomRotation(degrees=360),
-        'blur': transforms.GaussianBlur(kernel_size=(5, 9), sigma=(0.1, 5))
-    }
-    
-    def __init__(self, apply_n: int, reuse_transform: bool = False, replace_sample: bool = False):
+    def __init__(self, apply_n: int, reuse_transform: bool = False, replace_sample: bool = False, 
+                 image_size = 128):
         """
         Random Chosen transformation for a given image.
         
@@ -51,11 +43,28 @@ class RandomAugmentor(object):
         
         current_transforms:
             Currently applied transformations-
+            
+        image_size: int
+            image size for the blind transformation
         """
         self.apply_n = apply_n
         self.replace_sample = replace_sample
         self.reuse_transform = reuse_transform
         self.current_transforms = None
+        self._image_size = image_size
+        self._init_transforms()
+        
+    def _init_transforms(self):
+        RandomAugmentor.augmentations = {
+            'orig': transforms.Resize(self._image_size), # Blind transformation
+            'gray': transforms.Grayscale(num_output_channels=3),
+            'jit': transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
+            'fliph': transforms.RandomHorizontalFlip(p=1),
+            'flipv': transforms.RandomVerticalFlip(p=1),
+            'pers': transforms.RandomPerspective(distortion_scale=0.5, p=1, fill=0),
+            'rot': transforms.RandomRotation(degrees=360),
+            'blur': transforms.GaussianBlur(kernel_size=(5, 9), sigma=(0.1, 5))
+        }
     
     def _get_transformation(self):
         """Returns random Transformations"""
@@ -85,14 +94,15 @@ class RandomAugmentor(object):
         """Returns transformation keys"""
         return self.current_transforms
     
-    def transform_given_key(image: PIL, given_k):
+    def transform_given_key(self, image: PIL, given_key):
         """Transforms an image given a key."""
-        transform = self._get_transformation_given_k(given_k=given_k)
-        image = transform(image)
+        if given_key: # Workaround as it was filled with zeros == False
+            transform = self._get_transformation_given_k(given_k=given_key)
+            image = transform(image)
 
         return image
            
-def _transform_image(image_paths: tuple):
+def _transform_image(mp_iterable: tuple):
     """
     MP Func - Transform Single Image given with path
     
@@ -100,27 +110,25 @@ def _transform_image(image_paths: tuple):
     --------------
     image_paths: tuple
         Tuple of two path (from , to)
-        example: [(../data/image1.jpg, ../data/processed/image1.jpg), ...]
+        example:
+            [(../data/image1.jpg, ../data/processed/image1_trans.jpg, 'orig_flipv_fliph'), ...]
     
     Returns:
     --------------
-    Saves image given in the last place of the tuple 'image_paths'
+    Saves image given in the second place of the tuple 'image_paths' which indicates to new path.
     """
     # load image
-    image = PIL.Image.open(image_paths[0])
+    image = PIL.Image.open(mp_iterable[0])
     
     # apply base transformation
     image = base_transforms(image)
     
     # apply random augmentations
-    image = random_augmenter.random_transform(image)
-    applied_trans = random_augmenter.get_keys()
-    
-    # Save IMage with transformation in name
-    tmp_path = image_paths[1].split('.png')[0]
-    image.save(tmp_path + '_' + '_'.join(applied_trans) + '.png')
-    
-
+    # Applies Transformations given a Transformation key
+    if mp_iterable[2] != '0':
+        image = random_augmenter.transform_given_key(image, mp_iterable[2].split('_'))
+    image.save(mp_iterable[1])
+   
 
 if __name__ == '__main__':
     # Load Configs
@@ -131,11 +139,16 @@ if __name__ == '__main__':
         os.mkdir(conf['TO_FOLDER'])
         print('\nCreated:', conf['TO_FOLDER'])
     
+    # Read dataframe with all transform steps 
+    df_from = pd.read_csv(conf['DF_PATH'])
+    
     # Build Iterable
-    all_filenames = os.listdir(conf['FROM_FOLDER'])
-    from_ = [os.path.join(conf['FROM_FOLDER'], f) for f in all_filenames]
-    to_ = [os.path.join(conf['TO_FOLDER'], f) for f in all_filenames]
-    mp_iterable = list(zip(from_, to_))
+    tmp = list(df_from[['image', 'transforms', 'filename']].to_records(index=False))
+    from_ = [os.path.join(conf['FROM_FOLDER'], fname[0]) for fname in tmp]
+    transforms_ = [trans[1] for trans in tmp]
+    to_ = [os.path.join(conf['TO_FOLDER'], fname[2]) for fname in tmp]
+    mp_iterable = list(zip(from_, to_, transforms_))
+    
     if conf['TEST_ONLY']:
         mp_iterable = mp_iterable[:5]
         
@@ -144,12 +157,16 @@ if __name__ == '__main__':
     user_input = input('Want Proceed? (y/n)  ')
     if user_input == 'y':
         print(20*'-', f'Start at {time.ctime()}',20*'-')
+        
         # Initiate Transformation Classes
+        # Basic
         base_transforms = transforms.Compose([transforms.CenterCrop(conf['IMAGE_SIZE']-conf['REDUCE_PIXEL_CROP']),
-                                          transforms.Resize(conf['RESIZE'])])
+                                              transforms.Resize(conf['RESIZE'])])
+        # Advanced Transforms with random Augmentations
         random_augmenter = RandomAugmentor(apply_n=conf['RANDOM_APPLY_N'],
-                                       reuse_transform=conf['RANDOM_REUSE_TRANSFORM'],
-                                       replace_sample=conf['RANDOM_REPLACE'])
+                                           reuse_transform=conf['RANDOM_REUSE_TRANSFORM'],
+                                           replace_sample=conf['RANDOM_REPLACE'], 
+                                           image_size=conf['RESIZE'])
         
         # Call Multiprocessing 
         pool = Pool(processes=conf['N_PROCESSES'])
@@ -157,17 +174,5 @@ if __name__ == '__main__':
             pass
         
         print(20*'-', f'End at {time.ctime()}', 20*'-')
-        # Change Labelled Dataframe with given new name of dataframe due to transformations
-        print(50*'=')
-        print('Creating Copy of labelled Dataframe with new ID')
-        df = pd.read_csv(conf['DF_PATH_FROM'])
-        
-        # Extract old id name without ending (always first element when split _)
-        df['image'] = df['image'].apply(lambda x: x.split('.')[0])
-        
-        # Create dict for replacement
-        id_to_new = {i.split('_')[0]:i for i in os.listdir(conf['TO_FOLDER'])}
-        df['image'] = df['image'].replace(id_to_new)
-        
-        df.to_csv(conf['DF_PATH_TO'], index=False)
+        print(50*'=')       
         
