@@ -5,6 +5,7 @@ When calling this File:
 - It will create a new folder given as parameter TO_FOLDER
 - Make a transformed copy of all images from 'FROM_FOLDEr' to 'TO_FOLDER'
 - Create a new dataframe with the new filenames which is adaption of the given dataframe 'DF_PATH_FROM'
+
 """
 import os
 import time
@@ -23,8 +24,9 @@ class RandomAugmentor(object):
     """
     This class implements random transformation functions from torchvision.
     """
-    
+    image_size = 128
     augmentations = {
+        'orig': transforms.Resize(image_size), # Blind transformation
         'gray': transforms.Grayscale(num_output_channels=3),
         'jit': transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
         'fliph': transforms.RandomHorizontalFlip(p=1),
@@ -85,7 +87,7 @@ class RandomAugmentor(object):
         """Returns transformation keys"""
         return self.current_transforms
     
-    def transform_given_key(image: PIL, given_k):
+    def transform_given_key(self, image: PIL, given_k):
         """Transforms an image given a key."""
         transform = self._get_transformation_given_k(given_k=given_k)
         image = transform(image)
@@ -146,10 +148,10 @@ if __name__ == '__main__':
         print(20*'-', f'Start at {time.ctime()}',20*'-')
         # Initiate Transformation Classes
         base_transforms = transforms.Compose([transforms.CenterCrop(conf['IMAGE_SIZE']-conf['REDUCE_PIXEL_CROP']),
-                                          transforms.Resize(conf['RESIZE'])])
+                                              transforms.Resize(conf['RESIZE'])])
         random_augmenter = RandomAugmentor(apply_n=conf['RANDOM_APPLY_N'],
-                                       reuse_transform=conf['RANDOM_REUSE_TRANSFORM'],
-                                       replace_sample=conf['RANDOM_REPLACE'])
+                                           reuse_transform=conf['RANDOM_REUSE_TRANSFORM'],
+                                           replace_sample=conf['RANDOM_REPLACE'])
         
         # Call Multiprocessing 
         pool = Pool(processes=conf['N_PROCESSES'])
