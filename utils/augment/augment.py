@@ -89,13 +89,13 @@ class RandomAugmentor(object):
     
     def transform_given_key(self, image: PIL, given_key):
         """Transforms an image given a key."""
-        if given_key:
+        if given_key: # Workaround as it was filled with zeros == False
             transform = self._get_transformation_given_k(given_k=given_key)
             image = transform(image)
 
         return image
            
-def _transform_image(image_paths: tuple):
+def _transform_image(mp_iterable: tuple):
     """
     MP Func - Transform Single Image given with path
     
@@ -104,24 +104,28 @@ def _transform_image(image_paths: tuple):
     image_paths: tuple
         Tuple of two path (from , to)
         example: [(../data/image1.jpg, ../data/processed/image1.jpg), ...]
+        or: [(../data/image1.jpg, ../data/processed/image1.jpg, 'orig_flipv_fliph'), ...]
     
     Returns:
     --------------
-    Saves image given in the last place of the tuple 'image_paths'
+    Saves image given in the second place of the tuple 'image_paths' which indicates to new path.
     """
     # load image
-    image = PIL.Image.open(image_paths[0])
+    image = PIL.Image.open(mp_iterable[0])
     
     # apply base transformation
     image = base_transforms(image)
     
     # apply random augmentations
-    image = random_augmenter.random_transform(image)
-    applied_trans = random_augmenter.get_keys()
-    
-    # Save IMage with transformation in name
-    tmp_path = image_paths[1].split('.png')[0]
-    image.save(tmp_path + '_' + '_'.join(applied_trans) + '.png')
+    if len(mp_iterable) == 2:
+        image = random_augmenter.transform_given_key(image, mp_iterable[2].split('_'))
+        image.save(mp_iterable[1])
+    else:
+        image = random_augmenter.random_transform(image)
+        applied_trans = random_augmenter.get_keys()
+        # Save IMage with transformation in name
+        tmp_path = mp_iterable[1].split('.png')[0]
+        image.save(tmp_path + '_' + '_'.join(applied_trans) + '.png')
     
 
 
@@ -134,11 +138,17 @@ if __name__ == '__main__':
         os.mkdir(conf['TO_FOLDER'])
         print('\nCreated:', conf['TO_FOLDER'])
     
+    # Read dataframe with all transform steps 
+    df_from = pd.read_csv(conf['DF_PATH_FROM'])
+    
     # Build Iterable
-    all_filenames = os.listdir(conf['FROM_FOLDER'])
-    from_ = [os.path.join(conf['FROM_FOLDER'], f) for f in all_filenames]
-    to_ = [os.path.join(conf['TO_FOLDER'], f) for f in all_filenames]
-    mp_iterable = list(zip(from_, to_))
+    tmp = list(df_from[['image', 'transforms']].to_records(index=False))
+    file_names = [f[0] for f in tmp]
+    transforms_ = [f[1] for f in tmp]
+    from_ = [os.path.join(conf['FROM_FOLDER'], fname) for fname in file_names]
+    to_ = [os.path.join(conf['TO_FOLDER'], ) for fname in file_names]
+    mp_iterable = list(zip(from_, to_, transforms_))
+    
     if conf['TEST_ONLY']:
         mp_iterable = mp_iterable[:5]
         
@@ -162,7 +172,7 @@ if __name__ == '__main__':
         print(20*'-', f'End at {time.ctime()}', 20*'-')
         # Change Labelled Dataframe with given new name of dataframe due to transformations
         print(50*'=')
-        print('Creating Copy of labelled Dataframe with new ID')
+        """print('Creating Copy of labelled Dataframe with new ID')
         df = pd.read_csv(conf['DF_PATH_FROM'])
         
         # Extract old id name without ending (always first element when split _)
@@ -172,5 +182,5 @@ if __name__ == '__main__':
         id_to_new = {i.split('_')[0]:i for i in os.listdir(conf['TO_FOLDER'])}
         df['image'] = df['image'].replace(id_to_new)
         
-        df.to_csv(conf['DF_PATH_TO'], index=False)
+        df.to_csv(conf['DF_PATH_TO'], index=False)"""
         
