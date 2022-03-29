@@ -10241,3 +10241,422 @@ image,transforms,label,set,filename
 100102900.png,fliph_gray_jit,Rost/Einlauf rund,train,100102900_fliph_gray_jit.png
 100123400.png,orig_rot_pers,Vollguss/Pickelloch geschlossen,train,100123400_orig_rot_pers.png
 100123400.png,rot_fliph_jit,Vollguss/Pickelloch geschlossen,train,100123400_rot_fliph_jit.png
+100204400.png,0,Gussbeton/Pickelloch belueftet,val,100204400_0.png
+100123100.png,0,Vollguss/Handgriff geschlossen,val,100123100_0.png
+100176500.png,0,Vollguss/Handgriff geschlossen,val,100176500_0.png
+100064300.png,0,Rost/Strassenrost,val,100064300_0.png
+100119200.png,0,Gussbeton/Pickelloch geschlossen,val,100119200_0.png
+100129600.png,0,Rost/Strassenrost,val,100129600_0.png
+100028900.png,0,Rost/Strassenrost,val,100028900_0.png
+100122000.png,0,Rost/Einlauf rund,val,100122000_0.png
+100147700.png,0,Gussbeton/Pickelloch geschlossen,val,100147700_0.png
+100051200.png,0,Gussbeton/Pickelloch geschlossen,val,100051200_0.png
+100207300.png,0,Vollguss/Handgriff geschlossen,val,100207300_0.png
+100126000.png,0,Rost/Strassenrost,val,100126000_0.png
+100158000.png,0,Vollguss/Pickelloch geschlossen,val,100158000_0.png
+100202500.png,0,Vollguss/Pickelloch geschlossen,val,100202500_0.png
+100087900.png,0,"Vollguss/Handgriff geschlossen, verschraubt",val,100087900_0.png
+100124800.png,0,Rost/Strassenrost,val,100124800_0.png
+100107600.png,0,Vollguss/Handgriff geschlossen,val,100107600_0.png
+100009600.png,0,"Vollguss/Handgriff geschlossen, verschraubt",val,100009600_0.png
+100071200.png,0,Vollguss/Pickelloch geschlossen,val,100071200_0.png
+100004400.png,0,Rost/Strassenrost,val,100004400_0.png
+100174900.png,0,Rost/Strassenrost,val,100174900_0.png
+100048300.png,0,Rost/Strassenrost,val,100048300_0.png
+100063800.png,0,Vollguss/Pickelloch geschlossen,val,100063800_0.png
+100186300.png,0,Rost/Strassenrost,val,100186300_0.png
+100048400.png,0,Vollguss/Handgriff geschlossen,val,100048400_0.png
+100163400.png,0,Vollguss/Pickelloch belueftet,val,100163400_0.png
+100178600.png,0,Vollguss/Pickelloch geschlossen,val,100178600_0.png
+100136300.png,0,Rost/Strassenrost,val,100136300_0.png
+100188700.png,0,Gussbeton/Handgriff seitlich,val,100188700_0.png
+100016700.png,0,Vollguss/Handgriff geschlossen,val,100016700_0.png
+100188800.png,0,Rost/Strassenrost,val,100188800_0.png
+100075700.png,0,Vollguss/Pickelloch geschlossen,val,100075700_0.png
+100138700.png,0,Gussbeton/Pickelloch geschlossen,val,100138700_0.png
+100039300.png,0,Rost/Strassenrost,val,100039300_0.png
+100128300.png,0,Rost/Strassenrost gewoelbt,val,100128300_0.png
+100188000.png,0,Vollguss/Pickelloch geschlossen,val,100188000_0.png
+100095700.png,0,"Vollguss/Handgriff geschlossen, verschraubt",val,100095700_0.png
+100106300.png,0,Vollguss/Pickelloch belueftet,val,100106300_0.png
+100163800.png,0,Vollguss/Pickelloch belueftet,val,100163800_0.png
+100083600.png,0,Gussbeton/Handgriff mitte,val,100083600_0.png
+100050600.png,0,Andere/-,val,100050600_0.png
+100086100.png,0,Rost/Einlauf rund,val,100086100_0.png
+100067800.png,0,Vollguss/Pickelloch geschlossen,val,100067800_0.png
+100117500.png,0,Rost/Strassenrost,val,100117500_0.png
+100184200.png,0,Vollguss/Handgriff geschlossen,val,100184200_0.png
+100043700.png,0,Andere/-,val,100043700_0.png
+100105800.png,0,Vollguss/Pickelloch geschlossen,val,100105800_0.png
+100145800.png,0,Gussbeton/Pickelloch belueftet,val,100145800_0.png
+100033300.png,0,Vollguss/Pickelloch geschlossen,val,100033300_0.png
+100053600.png,0,Rost/Strassenrost,val,100053600_0.png
+100032700.png,0,Rost/Strassenrost,val,100032700_0.png
+100053400.png,0,Andere/-,val,100053400_0.png
+100004300.png,0,Vollguss/Handgriff geschlossen,val,100004300_0.png
+100089500.png,0,Vollguss/Pickelloch geschlossen,val,100089500_0.png
+100153900.png,0,Vollguss/Pickelloch geschlossen,val,100153900_0.png
+100183500.png,0,Rost/Strassenrost,val,100183500_0.png
+100061100.png,0,Rost/Strassenrost,val,100061100_0.png
+100000300.png,0,Vollguss/Handgriff geschlossen,val,100000300_0.png
+100190200.png,0,Rost/Strassenrost,val,100190200_0.png
+100152000.png,0,Gussbeton/Pickelloch geschlossen,val,100152000_0.png
+100041200.png,0,Rost/Strassenrost,val,100041200_0.png
+100158300.png,0,Vollguss/Handgriff geschlossen,val,100158300_0.png
+100041300.png,0,"Vollguss/Handgriff geschlossen, verschraubt",val,100041300_0.png
+100164000.png,0,Rost/Strassenrost,val,100164000_0.png
+100002500.png,0,Vollguss/Pickelloch geschlossen,val,100002500_0.png
+100003500.png,0,Gussbeton/Pickelloch belueftet,val,100003500_0.png
+100134000.png,0,Vollguss/Pickelloch geschlossen,val,100134000_0.png
+100179100.png,0,Gussbeton/Pickelloch belueftet,val,100179100_0.png
+100157100.png,0,Andere/-,val,100157100_0.png
+100038600.png,0,Rost/Strassenrost,val,100038600_0.png
+100039700.png,0,Rost/Strassenrost,val,100039700_0.png
+100101000.png,0,Gussbeton/Pickelloch geschlossen,val,100101000_0.png
+100185600.png,0,Rost/Einlauf rund,val,100185600_0.png
+100082300.png,0,Vollguss/Pickelloch geschlossen,val,100082300_0.png
+100121100.png,0,Vollguss/Pickelloch belueftet,val,100121100_0.png
+100145100.png,0,Gussbeton/Pickelloch belueftet,val,100145100_0.png
+100173700.png,0,Vollguss/Handgriff geschlossen,val,100173700_0.png
+100140300.png,0,Rost/Strassenrost,val,100140300_0.png
+100019600.png,0,Vollguss/Pickelloch geschlossen,val,100019600_0.png
+100121600.png,0,Gussbeton/Pickelloch geschlossen,val,100121600_0.png
+100037400.png,0,Vollguss/Pickelloch belueftet,val,100037400_0.png
+100159300.png,0,Gussbeton/Handgriff seitlich,val,100159300_0.png
+100103300.png,0,Rost/Strassenrost,val,100103300_0.png
+100018100.png,0,Vollguss/Handgriff geschlossen,val,100018100_0.png
+100128000.png,0,Gussbeton/Pickelloch geschlossen,val,100128000_0.png
+100025300.png,0,Rost/Strassenrost,val,100025300_0.png
+100123200.png,0,Vollguss/Handgriff geschlossen,val,100123200_0.png
+100191600.png,0,Vollguss/Handgriff geschlossen,val,100191600_0.png
+100060600.png,0,Vollguss/Handgriff geschlossen,val,100060600_0.png
+100044900.png,0,Rost/Strassenrost,val,100044900_0.png
+100180000.png,0,Rost/Einlauf rund,val,100180000_0.png
+100149100.png,0,"Vollguss/Handgriff geschlossen, verschraubt",val,100149100_0.png
+100048700.png,0,Rost/Einlauf rund,val,100048700_0.png
+100069600.png,0,Gussbeton/Pickelloch geschlossen,val,100069600_0.png
+100078000.png,0,Vollguss/Handgriff geschlossen,val,100078000_0.png
+100128800.png,0,Gussbeton/Pickelloch belueftet,val,100128800_0.png
+100106200.png,0,Rost/Strassenrost,val,100106200_0.png
+100001200.png,0,Rost/Einlauf rund,val,100001200_0.png
+100106400.png,0,Vollguss/Pickelloch belueftet,val,100106400_0.png
+100067700.png,0,Rost/Strassenrost gewoelbt,val,100067700_0.png
+100018200.png,0,Vollguss/Pickelloch geschlossen,val,100018200_0.png
+100203200.png,0,Vollguss/Handgriff geschlossen,val,100203200_0.png
+100093000.png,0,Gussbeton/Handgriff mitte,val,100093000_0.png
+100107700.png,0,Gussbeton/Pickelloch belueftet,val,100107700_0.png
+100086000.png,0,Gussbeton/Pickelloch geschlossen,val,100086000_0.png
+100146700.png,0,Vollguss/Pickelloch geschlossen,val,100146700_0.png
+100025000.png,0,Rost/Strassenrost,val,100025000_0.png
+100049600.png,0,Vollguss/Handgriff geschlossen,val,100049600_0.png
+100070000.png,0,Vollguss/Handgriff geschlossen,val,100070000_0.png
+100002700.png,0,Gussbeton/Pickelloch belueftet,val,100002700_0.png
+100079200.png,0,"Vollguss/Handgriff geschlossen, verschraubt",val,100079200_0.png
+100042800.png,0,Vollguss/Pickelloch geschlossen,val,100042800_0.png
+100037300.png,0,Rost/Strassenrost,val,100037300_0.png
+100041900.png,0,Rost/Strassenrost,val,100041900_0.png
+100064100.png,0,Vollguss/Handgriff geschlossen,val,100064100_0.png
+100215500.png,0,"Vollguss/Handgriff geschlossen, verschraubt",val,100215500_0.png
+100172100.png,0,Gussbeton/Handgriff seitlich,val,100172100_0.png
+100175000.png,0,Vollguss/Handgriff geschlossen,val,100175000_0.png
+100038200.png,0,Vollguss/Pickelloch geschlossen,val,100038200_0.png
+100151500.png,0,Vollguss/Pickelloch geschlossen,val,100151500_0.png
+100093300.png,0,Rost/Strassenrost,val,100093300_0.png
+100102500.png,0,Andere/-,val,100102500_0.png
+100117800.png,0,Vollguss/Pickelloch geschlossen,val,100117800_0.png
+100158100.png,0,Vollguss/Pickelloch geschlossen,val,100158100_0.png
+100114200.png,0,Rost/Strassenrost,val,100114200_0.png
+100179600.png,0,Vollguss/Pickelloch geschlossen,val,100179600_0.png
+100044300.png,0,Rost/Strassenrost,val,100044300_0.png
+100137800.png,0,Vollguss/Pickelloch geschlossen,val,100137800_0.png
+100179700.png,0,Vollguss/Handgriff geschlossen,val,100179700_0.png
+100160200.png,0,Gussbeton/Pickelloch geschlossen,val,100160200_0.png
+100133000.png,0,Rost/Strassenrost,val,100133000_0.png
+100215700.png,0,Gussbeton/Pickelloch geschlossen,val,100215700_0.png
+100127200.png,0,Vollguss/Handgriff geschlossen,val,100127200_0.png
+100111200.png,0,Andere/-,val,100111200_0.png
+100011800.png,0,Vollguss/Pickelloch belueftet,val,100011800_0.png
+100039600.png,0,Vollguss/Pickelloch belueftet,val,100039600_0.png
+100009400.png,0,Vollguss/Handgriff geschlossen,val,100009400_0.png
+100004500.png,0,Andere/-,val,100004500_0.png
+100143000.png,0,Rost/Strassenrost,val,100143000_0.png
+100088800.png,0,Gussbeton/Pickelloch belueftet,val,100088800_0.png
+100142700.png,0,Rost/Strassenrost,val,100142700_0.png
+100203900.png,0,Rost/Strassenrost,val,100203900_0.png
+100112100.png,0,Rost/Strassenrost,val,100112100_0.png
+100188800.png,0,Rost/Strassenrost,val,100188800_0.png
+100124200.png,0,"Vollguss/Handgriff geschlossen, verschraubt",val,100124200_0.png
+100054500.png,0,Vollguss/Pickelloch geschlossen,val,100054500_0.png
+100177100.png,0,Rost/Einlauf rund,val,100177100_0.png
+100017200.png,0,Vollguss/Aufklappbar,val,100017200_0.png
+100145600.png,0,Gussbeton/Pickelloch belueftet,val,100145600_0.png
+100131900.png,0,Vollguss/Pickelloch geschlossen,val,100131900_0.png
+100113200.png,0,Vollguss/Pickelloch geschlossen,val,100113200_0.png
+100195200.png,0,Rost/Strassenrost,val,100195200_0.png
+100107500.png,0,Vollguss/Pickelloch geschlossen,val,100107500_0.png
+100001100.png,0,Vollguss/Pickelloch geschlossen,val,100001100_0.png
+100111300.png,0,Andere/-,val,100111300_0.png
+100173300.png,0,Vollguss/Pickelloch geschlossen,val,100173300_0.png
+100172300.png,0,Vollguss/Pickelloch geschlossen,val,100172300_0.png
+100073000.png,0,Vollguss/Handgriff geschlossen,val,100073000_0.png
+100092200.png,0,Rost/Einlauf rund,val,100092200_0.png
+100023400.png,0,Vollguss/Pickelloch geschlossen,val,100023400_0.png
+100039900.png,0,Gussbeton/Pickelloch belueftet,val,100039900_0.png
+100212100.png,0,Gussbeton/Pickelloch geschlossen,val,100212100_0.png
+100085400.png,0,Rost/Strassenrost,val,100085400_0.png
+100189800.png,0,Gussbeton/Pickelloch belueftet,val,100189800_0.png
+100169700.png,0,Vollguss/Pickelloch geschlossen,val,100169700_0.png
+100212300.png,0,Rost/Strassenrost,val,100212300_0.png
+100211500.png,0,Vollguss/Pickelloch geschlossen,val,100211500_0.png
+100112800.png,0,Vollguss/Pickelloch geschlossen,val,100112800_0.png
+100009500.png,0,Gussbeton/Handgriff seitlich,val,100009500_0.png
+100096700.png,0,Rost/Strassenrost,val,100096700_0.png
+100039400.png,0,Vollguss/Pickelloch belueftet,val,100039400_0.png
+100074600.png,0,Rost/Strassenrost,val,100074600_0.png
+100210600.png,0,Rost/Strassenrost,val,100210600_0.png
+100205000.png,0,Gussbeton/Handgriff mitte,val,100205000_0.png
+100076700.png,0,Vollguss/Pickelloch geschlossen,val,100076700_0.png
+100135100.png,0,Rost/Strassenrost,val,100135100_0.png
+100028600.png,0,Rost/Strassenrost,val,100028600_0.png
+100021100.png,0,Vollguss/Handgriff geschlossen,val,100021100_0.png
+100076100.png,0,Vollguss/Handgriff geschlossen,val,100076100_0.png
+100159100.png,0,Andere/-,val,100159100_0.png
+100158700.png,0,Vollguss/Handgriff geschlossen,val,100158700_0.png
+100198500.png,0,Vollguss/Handgriff geschlossen,val,100198500_0.png
+100209300.png,0,Rost/Strassenrost,val,100209300_0.png
+100074000.png,0,Rost/Strassenrost,val,100074000_0.png
+100111500.png,0,Vollguss/Handgriff geschlossen,val,100111500_0.png
+100102400.png,0,Vollguss/Handgriff geschlossen,val,100102400_0.png
+100190300.png,0,Rost/Strassenrost,val,100190300_0.png
+100033800.png,0,Vollguss/Handgriff geschlossen,val,100033800_0.png
+100198200.png,0,Rost/Strassenrost,val,100198200_0.png
+100170700.png,0,Vollguss/Pickelloch belueftet,val,100170700_0.png
+100119500.png,0,Rost/Strassenrost,val,100119500_0.png
+100189900.png,0,Rost/Strassenrost,val,100189900_0.png
+100042000.png,0,Vollguss/Pickelloch geschlossen,val,100042000_0.png
+100178700.png,0,Rost/Einlauf rund,val,100178700_0.png
+100073800.png,0,Vollguss/Handgriff geschlossen,val,100073800_0.png
+100031800.png,0,Rost/Strassenrost,val,100031800_0.png
+100007500.png,0,Vollguss/Pickelloch geschlossen,val,100007500_0.png
+100126400.png,0,Gussbeton/Pickelloch geschlossen,val,100126400_0.png
+100140900.png,0,Gussbeton/Handgriff seitlich,val,100140900_0.png
+100176200.png,0,Rost/Strassenrost,val,100176200_0.png
+100207800.png,0,Gussbeton/Pickelloch geschlossen,val,100207800_0.png
+100179900.png,0,Rost/Strassenrost,val,100179900_0.png
+100106800.png,0,Vollguss/Handgriff geschlossen,val,100106800_0.png
+100077500.png,0,Gussbeton/Pickelloch geschlossen,val,100077500_0.png
+100179000.png,0,Gussbeton/Pickelloch belueftet,val,100179000_0.png
+100118100.png,0,Vollguss/Handgriff geschlossen,val,100118100_0.png
+100176600.png,0,Vollguss/Handgriff geschlossen,val,100176600_0.png
+100183100.png,0,"Vollguss/Handgriff geschlossen, verschraubt",val,100183100_0.png
+100027500.png,0,Vollguss/Handgriff geschlossen,val,100027500_0.png
+100159900.png,0,Vollguss/Pickelloch geschlossen,test,100159900_0.png
+100206700.png,0,Gussbeton/Pickelloch belueftet,test,100206700_0.png
+100175400.png,0,Vollguss/Handgriff geschlossen,test,100175400_0.png
+100097200.png,0,Vollguss/Handgriff geschlossen,test,100097200_0.png
+100125200.png,0,Vollguss/Handgriff geschlossen,test,100125200_0.png
+100057800.png,0,Gussbeton/Pickelloch geschlossen,test,100057800_0.png
+100052500.png,0,Rost/Strassenrost,test,100052500_0.png
+100191300.png,0,Gussbeton/Pickelloch belueftet,test,100191300_0.png
+100197500.png,0,Rost/Strassenrost,test,100197500_0.png
+100000400.png,0,"Vollguss/Handgriff geschlossen, verschraubt",test,100000400_0.png
+100013200.png,0,Vollguss/Handgriff geschlossen,test,100013200_0.png
+100185000.png,0,Vollguss/Pickelloch geschlossen,test,100185000_0.png
+100062600.png,0,Rost/Strassenrost,test,100062600_0.png
+100138900.png,0,Rost/Strassenrost,test,100138900_0.png
+100024400.png,0,Rost/Strassenrost,test,100024400_0.png
+100116500.png,0,Gussbeton/Pickelloch geschlossen,test,100116500_0.png
+100146500.png,0,Rost/Strassenrost,test,100146500_0.png
+100000600.png,0,Vollguss/Pickelloch belueftet,test,100000600_0.png
+100094500.png,0,Vollguss/Handgriff geschlossen,test,100094500_0.png
+100007200.png,0,Rost/Einlauf rund,test,100007200_0.png
+100067000.png,0,Rost/Einlauf rund,test,100067000_0.png
+100112900.png,0,Rost/Einlauf rund,test,100112900_0.png
+100085100.png,0,Vollguss/Pickelloch geschlossen,test,100085100_0.png
+100141700.png,0,Rost/Strassenrost,test,100141700_0.png
+100110400.png,0,Vollguss/Pickelloch geschlossen,test,100110400_0.png
+100031200.png,0,Rost/Strassenrost,test,100031200_0.png
+100214600.png,0,Rost/Strassenrost,test,100214600_0.png
+100195900.png,0,Gussbeton/Pickelloch belueftet,test,100195900_0.png
+100071800.png,0,Rost/Strassenrost,test,100071800_0.png
+100187300.png,0,Gussbeton/Pickelloch geschlossen,test,100187300_0.png
+100118300.png,0,Rost/Strassenrost,test,100118300_0.png
+100121000.png,0,Vollguss/Pickelloch geschlossen,test,100121000_0.png
+100075200.png,0,Vollguss/Pickelloch geschlossen,test,100075200_0.png
+100092800.png,0,Gussbeton/Pickelloch belueftet,test,100092800_0.png
+100051300.png,0,Vollguss/Pickelloch belueftet,test,100051300_0.png
+100136100.png,0,Vollguss/Handgriff geschlossen,test,100136100_0.png
+100108300.png,0,Rost/Strassenrost,test,100108300_0.png
+100119300.png,0,Rost/Strassenrost,test,100119300_0.png
+100190800.png,0,Vollguss/Pickelloch geschlossen,test,100190800_0.png
+100045000.png,0,Rost/Strassenrost,test,100045000_0.png
+100080400.png,0,Vollguss/Pickelloch geschlossen,test,100080400_0.png
+100149800.png,0,Andere/-,test,100149800_0.png
+100188100.png,0,Gussbeton/Pickelloch geschlossen,test,100188100_0.png
+100019800.png,0,Vollguss/Pickelloch belueftet,test,100019800_0.png
+100032900.png,0,Gussbeton/Pickelloch geschlossen,test,100032900_0.png
+100194800.png,0,Vollguss/Handgriff geschlossen,test,100194800_0.png
+100182700.png,0,Vollguss/Handgriff geschlossen,test,100182700_0.png
+100190100.png,0,Vollguss/Handgriff geschlossen,test,100190100_0.png
+100143300.png,0,Vollguss/Handgriff geschlossen,test,100143300_0.png
+100098900.png,0,Vollguss/Pickelloch belueftet,test,100098900_0.png
+100039500.png,0,Rost/Strassenrost,test,100039500_0.png
+100131400.png,0,Rost/Strassenrost,test,100131400_0.png
+100128400.png,0,Rost/Strassenrost,test,100128400_0.png
+100083000.png,0,Andere/-,test,100083000_0.png
+100062800.png,0,Vollguss/Pickelloch geschlossen,test,100062800_0.png
+100010100.png,0,Rost/Strassenrost,test,100010100_0.png
+100201400.png,0,Vollguss/Pickelloch geschlossen,test,100201400_0.png
+100135000.png,0,"Vollguss/Handgriff geschlossen, verschraubt",test,100135000_0.png
+100094100.png,0,Vollguss/Pickelloch geschlossen,test,100094100_0.png
+100175500.png,0,Vollguss/Pickelloch geschlossen,test,100175500_0.png
+100062000.png,0,Vollguss/Pickelloch geschlossen,test,100062000_0.png
+100009300.png,0,Rost/Strassenrost,test,100009300_0.png
+100033000.png,0,Vollguss/Pickelloch geschlossen,test,100033000_0.png
+100196800.png,0,Rost/Strassenrost gewoelbt,test,100196800_0.png
+100193200.png,0,Rost/Strassenrost,test,100193200_0.png
+100147500.png,0,Vollguss/Pickelloch geschlossen,test,100147500_0.png
+100060900.png,0,Rost/Strassenrost,test,100060900_0.png
+100150400.png,0,Vollguss/Handgriff geschlossen,test,100150400_0.png
+100179300.png,0,Rost/Strassenrost,test,100179300_0.png
+100200400.png,0,Vollguss/Pickelloch belueftet,test,100200400_0.png
+100200500.png,0,Vollguss/Pickelloch geschlossen,test,100200500_0.png
+100103400.png,0,Rost/Strassenrost,test,100103400_0.png
+100063000.png,0,Vollguss/Pickelloch geschlossen,test,100063000_0.png
+100108900.png,0,Rost/Einlauf rund,test,100108900_0.png
+100026100.png,0,"Vollguss/Handgriff geschlossen, verschraubt",test,100026100_0.png
+100206000.png,0,Rost/Strassenrost,test,100206000_0.png
+100201200.png,0,Gussbeton/Pickelloch belueftet,test,100201200_0.png
+100108800.png,0,Vollguss/Pickelloch belueftet,test,100108800_0.png
+100117000.png,0,Vollguss/Handgriff geschlossen,test,100117000_0.png
+100048000.png,0,Andere/-,test,100048000_0.png
+100075500.png,0,Vollguss/Handgriff geschlossen,test,100075500_0.png
+100162900.png,0,Rost/Strassenrost,test,100162900_0.png
+100197100.png,0,Vollguss/Handgriff geschlossen,test,100197100_0.png
+100070800.png,0,Rost/Strassenrost,test,100070800_0.png
+100069400.png,0,Gussbeton/Pickelloch belueftet,test,100069400_0.png
+100008500.png,0,Vollguss/Pickelloch geschlossen,test,100008500_0.png
+100040900.png,0,Rost/Einlauf rund,test,100040900_0.png
+100102800.png,0,Gussbeton/Pickelloch geschlossen,test,100102800_0.png
+100064400.png,0,Vollguss/Handgriff geschlossen,test,100064400_0.png
+100031400.png,0,Rost/Einlauf rund,test,100031400_0.png
+100177800.png,0,Rost/Strassenrost,test,100177800_0.png
+100103200.png,0,Andere/-,test,100103200_0.png
+100207200.png,0,Gussbeton/Pickelloch geschlossen,test,100207200_0.png
+100184800.png,0,Rost/Strassenrost,test,100184800_0.png
+100206400.png,0,Gussbeton/Pickelloch geschlossen,test,100206400_0.png
+100089800.png,0,Rost/Strassenrost,test,100089800_0.png
+100144400.png,0,Rost/Strassenrost,test,100144400_0.png
+100032500.png,0,Rost/Strassenrost,test,100032500_0.png
+100123000.png,0,Gussbeton/Pickelloch geschlossen,test,100123000_0.png
+100113300.png,0,Vollguss/Handgriff geschlossen,test,100113300_0.png
+100167000.png,0,Andere/-,test,100167000_0.png
+100088400.png,0,"Vollguss/Handgriff geschlossen, verschraubt",test,100088400_0.png
+100029400.png,0,Vollguss/Handgriff geschlossen,test,100029400_0.png
+100096600.png,0,Rost/Strassenrost,test,100096600_0.png
+100202600.png,0,Gussbeton/Pickelloch belueftet,test,100202600_0.png
+100169000.png,0,Vollguss/Pickelloch geschlossen,test,100169000_0.png
+100203500.png,0,Rost/Strassenrost,test,100203500_0.png
+100071400.png,0,Vollguss/Handgriff geschlossen,test,100071400_0.png
+100065800.png,0,Vollguss/Aufklappbar,test,100065800_0.png
+100217500.png,0,Vollguss/Pickelloch geschlossen,test,100217500_0.png
+100064000.png,0,Vollguss/Handgriff geschlossen,test,100064000_0.png
+100114300.png,0,Gussbeton/Handgriff seitlich,test,100114300_0.png
+100013800.png,0,Rost/Strassenrost,test,100013800_0.png
+100139800.png,0,Vollguss/Pickelloch geschlossen,test,100139800_0.png
+100053100.png,0,Vollguss/Handgriff geschlossen,test,100053100_0.png
+100129800.png,0,Rost/Strassenrost,test,100129800_0.png
+100150600.png,0,Vollguss/Pickelloch belueftet,test,100150600_0.png
+100189600.png,0,Gussbeton/Handgriff seitlich,test,100189600_0.png
+100106100.png,0,Vollguss/Handgriff geschlossen,test,100106100_0.png
+100006000.png,0,Vollguss/Handgriff geschlossen,test,100006000_0.png
+100056300.png,0,Vollguss/Handgriff geschlossen,test,100056300_0.png
+100025500.png,0,Gussbeton/Pickelloch belueftet,test,100025500_0.png
+100114600.png,0,Rost/Strassenrost,test,100114600_0.png
+100002100.png,0,Rost/Strassenrost,test,100002100_0.png
+100156500.png,0,Vollguss/Pickelloch geschlossen,test,100156500_0.png
+100194700.png,0,Vollguss/Pickelloch geschlossen,test,100194700_0.png
+100022400.png,0,Rost/Strassenrost,test,100022400_0.png
+100003900.png,0,Rost/Strassenrost,test,100003900_0.png
+100134500.png,0,Rost/Strassenrost,test,100134500_0.png
+100174100.png,0,Gussbeton/Pickelloch belueftet,test,100174100_0.png
+100149300.png,0,Vollguss/Pickelloch geschlossen,test,100149300_0.png
+100084800.png,0,Andere/-,test,100084800_0.png
+100164900.png,0,Vollguss/Handgriff geschlossen,test,100164900_0.png
+100126200.png,0,Vollguss/Pickelloch geschlossen,test,100126200_0.png
+100001000.png,0,Gussbeton/Pickelloch geschlossen,test,100001000_0.png
+100065400.png,0,Rost/Einlauf rund,test,100065400_0.png
+100026900.png,0,Gussbeton/Pickelloch belueftet,test,100026900_0.png
+100066500.png,0,"Vollguss/Handgriff geschlossen, verschraubt",test,100066500_0.png
+100182100.png,0,Rost/Strassenrost,test,100182100_0.png
+100198100.png,0,Gussbeton/Pickelloch geschlossen,test,100198100_0.png
+100198800.png,0,Gussbeton/Handgriff mitte,test,100198800_0.png
+100072000.png,0,Gussbeton/Pickelloch geschlossen,test,100072000_0.png
+100118500.png,0,Vollguss/Pickelloch geschlossen,test,100118500_0.png
+100098300.png,0,Gussbeton/Pickelloch geschlossen,test,100098300_0.png
+100117300.png,0,Gussbeton/Pickelloch belueftet,test,100117300_0.png
+100160300.png,0,Vollguss/Pickelloch geschlossen,test,100160300_0.png
+100047800.png,0,Gussbeton/Handgriff seitlich,test,100047800_0.png
+100217800.png,0,Gussbeton/Pickelloch geschlossen,test,100217800_0.png
+100205200.png,0,Vollguss/Handgriff geschlossen,test,100205200_0.png
+100182500.png,0,"Vollguss/Handgriff geschlossen, verschraubt",test,100182500_0.png
+100169300.png,0,Rost/Strassenrost,test,100169300_0.png
+100161900.png,0,Rost/Strassenrost,test,100161900_0.png
+100008000.png,0,Rost/Einlauf rund,test,100008000_0.png
+100144200.png,0,Rost/Strassenrost,test,100144200_0.png
+100208700.png,0,Rost/Strassenrost,test,100208700_0.png
+100102000.png,0,Vollguss/Pickelloch geschlossen,test,100102000_0.png
+100069800.png,0,Vollguss/Pickelloch geschlossen,test,100069800_0.png
+100091900.png,0,Andere/-,test,100091900_0.png
+100155400.png,0,Vollguss/Handgriff geschlossen,test,100155400_0.png
+100180700.png,0,Vollguss/Pickelloch geschlossen,test,100180700_0.png
+100073500.png,0,Vollguss/Pickelloch geschlossen,test,100073500_0.png
+100147600.png,0,"Vollguss/Handgriff geschlossen, verschraubt",test,100147600_0.png
+100086300.png,0,Vollguss/Pickelloch geschlossen,test,100086300_0.png
+100101100.png,0,Vollguss/Pickelloch geschlossen,test,100101100_0.png
+100199100.png,0,Vollguss/Handgriff geschlossen,test,100199100_0.png
+100049300.png,0,Rost/Einlauf rund,test,100049300_0.png
+100145500.png,0,Vollguss/Handgriff geschlossen,test,100145500_0.png
+100208600.png,0,Gussbeton/Pickelloch geschlossen,test,100208600_0.png
+100205300.png,0,Rost/Strassenrost,test,100205300_0.png
+100010800.png,0,Vollguss/Handgriff geschlossen,test,100010800_0.png
+100031700.png,0,Vollguss/Handgriff geschlossen,test,100031700_0.png
+100179500.png,0,Rost/Strassenrost,test,100179500_0.png
+100088700.png,0,Gussbeton/Handgriff seitlich,test,100088700_0.png
+100137500.png,0,Rost/Strassenrost,test,100137500_0.png
+100061700.png,0,Vollguss/Pickelloch geschlossen,test,100061700_0.png
+100189400.png,0,Vollguss/Pickelloch geschlossen,test,100189400_0.png
+100031300.png,0,Vollguss/Pickelloch geschlossen,test,100031300_0.png
+100005600.png,0,Andere/-,test,100005600_0.png
+100215900.png,0,Gussbeton/Handgriff mitte,test,100215900_0.png
+100055000.png,0,Rost/Strassenrost,test,100055000_0.png
+100182200.png,0,Vollguss/Handgriff geschlossen,test,100182200_0.png
+100162800.png,0,Vollguss/Handgriff geschlossen,test,100162800_0.png
+100113700.png,0,Gussbeton/Pickelloch geschlossen,test,100113700_0.png
+100052900.png,0,Vollguss/Pickelloch geschlossen,test,100052900_0.png
+100165300.png,0,Vollguss/Pickelloch geschlossen,test,100165300_0.png
+100079600.png,0,Rost/Strassenrost,test,100079600_0.png
+100209700.png,0,Andere/-,test,100209700_0.png
+100100100.png,0,Rost/Strassenrost,test,100100100_0.png
+100184500.png,0,Rost/Strassenrost,test,100184500_0.png
+100023500.png,0,Rost/Strassenrost,test,100023500_0.png
+100095000.png,0,"Vollguss/Handgriff geschlossen, verschraubt",test,100095000_0.png
+100022900.png,0,Rost/Strassenrost,test,100022900_0.png
+100015600.png,0,Vollguss/Handgriff geschlossen,test,100015600_0.png
+100195700.png,0,Andere/-,test,100195700_0.png
+100082800.png,0,Rost/Einlauf rund,test,100082800_0.png
+100174700.png,0,Vollguss/Pickelloch belueftet,test,100174700_0.png
+100207700.png,0,Vollguss/Handgriff geschlossen,test,100207700_0.png
+100074100.png,0,Rost/Strassenrost,test,100074100_0.png
+100074900.png,0,Vollguss/Handgriff geschlossen,test,100074900_0.png
+100139700.png,0,Vollguss/Pickelloch geschlossen,test,100139700_0.png
+100164300.png,0,Vollguss/Pickelloch belueftet,test,100164300_0.png
+100118200.png,0,Vollguss/Handgriff geschlossen,test,100118200_0.png
+100153700.png,0,Vollguss/Handgriff geschlossen,test,100153700_0.png
+100042400.png,0,Vollguss/Handgriff geschlossen,test,100042400_0.png
+100157600.png,0,Rost/Strassenrost,test,100157600_0.png
+100042700.png,0,Vollguss/Pickelloch geschlossen,test,100042700_0.png
+100115400.png,0,Gussbeton/Pickelloch geschlossen,test,100115400_0.png
+100139100.png,0,Gussbeton/Pickelloch belueftet,test,100139100_0.png
+100205600.png,0,Gussbeton/Pickelloch belueftet,test,100205600_0.png
+100040300.png,0,Rost/Strassenrost,test,100040300_0.png
