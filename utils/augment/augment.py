@@ -130,15 +130,25 @@ def _transform_image(mp_iterable: tuple):
     image.save(mp_iterable[1])
    
 
-if __name__ == '__main__':
-    # Load Configs
-    with open('augment_config.yaml', 'r') as yaml_file:
-        conf = yaml.load(yaml_file, yaml.FullLoader)
-    print('Configurations:\n' , conf)
-    if not os.path.isdir(conf['TO_FOLDER']):
-        os.mkdir(conf['TO_FOLDER'])
-        print('\nCreated:', conf['TO_FOLDER'])
-    
+# Load Configs
+with open('augment_config.yaml', 'r') as yaml_file:
+    conf = yaml.load(yaml_file, yaml.FullLoader)
+print('Configurations:\n' , conf)
+if not os.path.isdir(conf['TO_FOLDER']):
+    os.mkdir(conf['TO_FOLDER'])
+    print('\nCreated:', conf['TO_FOLDER'])
+
+
+base_transforms = transforms.Compose([transforms.CenterCrop(conf['IMAGE_SIZE']-conf['REDUCE_PIXEL_CROP']),
+                                        transforms.Resize(conf['RESIZE'])])
+# Advanced Transforms with random Augmentations
+random_augmenter = RandomAugmentor(apply_n=conf['RANDOM_APPLY_N'],
+                                    reuse_transform=conf['RANDOM_REUSE_TRANSFORM'],
+                                    replace_sample=conf['RANDOM_REPLACE'], 
+                                    image_size=conf['RESIZE'])
+
+
+if __name__ == '__main__':    
     # Read dataframe with all transform steps 
     df_from = pd.read_csv(conf['DF_PATH'])
     
