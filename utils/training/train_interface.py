@@ -30,7 +30,7 @@ class TrainingInterface(object):
         
         self.dev = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
         self.train_loss = []
-        self.eval_loss = []
+        self.val_loss = []
         self.train_epoch_loss = []
         self.val_epoch_loss = []
     
@@ -105,7 +105,7 @@ class TrainingInterface(object):
                     optimizer.step()
 
                     # calc and print stats
-                    self.train_losses.append(loss.item())
+                    self.train_loss.append(loss.item())
                     running_loss += loss.item()                
                     pbar.set_description('Epoch: {}/{} // Running Loss: {} '.format(epoch+1, n_epochs, 
                                                                                     np.round(running_loss, 3)))
@@ -126,7 +126,7 @@ class TrainingInterface(object):
                             outputs = self.model(inputs)
                             eval_loss = criterion(outputs, labels)
                             val_loss += eval_loss.item()
-                            self.eval_losses.append(eval_loss.item())
+                            self.val_losses.append(eval_loss.item())
                         self.model.train()  
                     self.val_epoch_loss.append(val_loss)
                 if verbose:
