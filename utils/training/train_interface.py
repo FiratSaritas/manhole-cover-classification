@@ -126,7 +126,7 @@ class TrainingInterface(object):
                             outputs = self.model(inputs)
                             eval_loss = criterion(outputs, labels)
                             val_loss += eval_loss.item()
-                            self.val_losses.append(eval_loss.item())
+                            self.val_loss.append(eval_loss.item())
                         self.model.train()  
                     self.val_epoch_loss.append(val_loss)
                 if verbose:
