@@ -43,14 +43,12 @@ def train_network(model, criterion, optimizer, n_epochs, dataloader_train,
     dev = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     model.to(dev)
     criterion.to(dev)
-
-    model.train()
-    val_loss = 0.
     
+    model.train()
     overall_length = len(dataloader_train)
     with tqdm(total=n_epochs*overall_length) as pbar:
         for epoch in range(n_epochs):  # loop over the dataset multiple times
-            running_loss = 0.
+            running_loss, val_loss = 0., 0.
             for i, data in enumerate(dataloader_train):
                 # get the inputs; data is a list of [inputs, labels]
                 inputs, labels = data
@@ -68,8 +66,6 @@ def train_network(model, criterion, optimizer, n_epochs, dataloader_train,
                 # calc and print stats
                 train_losses.append(loss.item())
                 running_loss += loss.item()                
-                
-                
                 pbar.set_description('Epoch: {}/{} // Running Loss: {} '.format(epoch+1, n_epochs, 
                                                                                 np.round(running_loss, 3)))
                 pbar.update(1)
@@ -83,18 +79,16 @@ def train_network(model, criterion, optimizer, n_epochs, dataloader_train,
                     # get the inputs; data is a list of [inputs, labels]
                     inputs, labels = data
                     inputs, labels = inputs.to(dev), labels.to(dev)
-                    # forward + backward + optimize
-                    outputs = model(inputs)
-                    eval_loss = criterion(outputs, labels)
-                    val_loss += eval_loss.item()
-                    eval_losses.append(eval_loss.item())
-                    model.train()
-                    
+                    with torch.no_grad():
+                        outputs = model(inputs)
+                        eval_loss = criterion(outputs, labels)
+                        val_loss += eval_loss.item()
+                        eval_losses.append(eval_loss.item())
+                    model.train()         
             if verbose:
-                print('Epoch {}/{}: Train-Loss = {} /// Validation-Loss = {}'.format(epoch+1, n_epochs, 
+                print('Epoch {}/{}: [Train-Loss = {}] || [Validation-Loss = {}]'.format(epoch+1, n_epochs, 
                                                                                      np.round(running_loss, 3),     
-                                                                                     np.round(val_loss, 3)))
-                            
+                                                                                     np.round(val_loss, 3)))                   
     return model, dict(train=train_losses, test=eval_losses)
 
 
@@ -105,10 +99,8 @@ def network_predict(model, dataloader):
 
     params:
     ---------
-    model:
-        Pytorch Neuronal Net
-    dataloader:
-        batched Testset
+    model:           Pytorch Neuronal Net
+    dataloader:      batched Testset
 
     returns:
     ----------
