@@ -5,6 +5,7 @@ import os
 from torchvision import transforms as transforms
 import pandas as pd
 import numpy as np
+import pickle
 
 
 class MHCoverDataset(Dataset):
@@ -12,27 +13,19 @@ class MHCoverDataset(Dataset):
     Class defines custom Dataset as a workaround to the ImageFolder class
     """
 
-    def __init__(self, root_dir: str, df: pd.DataFrame, transform: 'transforms.Compose' = None,
+    def __init__(self, root_dir: str, df: pd.DataFrame, transform: 'transforms.Compose' = None, fp_label_translator: 'str', 
                  label_indexer: str = 'label'):
         """
         Initializes the dataset class.
 
         Params:
         ------------------
-        root_dir: str
-            Defines the path from where all images should be imported from
-
-        df: pd.DataFrame
-            Prefiltered!! Dataframe to load labels from (filtered according to Train-Val-test set)
-
-        transform: torch.utils.transforms.Compose
-            Compose of different transforms applied during import of an image.
-
-        label_indexer: str
-            Column name of the index to take.
-
-        _images: list
-            List of all images names in the root dir.
+        root_dir: str              Defines the path from where all images should be imported from
+        df: pd.DataFrame           Prefiltered!! Dataframe to load labels from (filtered according to Train-Val-test set)
+        transform: Compose         Compose of different transforms applied during import of an image.
+        fp_label_translator: str   Path to pickle file with label translator.
+        label_indexer: str         Column name of the index to take.
+        _images: list              List of all images names in the root dir.
         """
         self.root_dir = root_dir
         self.df = df
@@ -45,11 +38,12 @@ class MHCoverDataset(Dataset):
         
     def _init_attributes(self):
         """
-        - Creates Dictionary for Label Encoding
-        - Matches Data in Folder with the ones in the filtered pd.DataFrame
+        Creates Dictionary for Label Encoding
+        Matches Data in Folder with the ones in the filtered pd.DataFrame
         """
         # Label dict
-        self.label_dict = {label:i for i, label in enumerate(self.df[self.label_indexer].unique())}
+         with open(self.fp_label_translator, 'rb') as pkl_file:
+            self.label_dict = pickle.load(pkl_file)
         self.label_dict_r = {i:label for label, i in self.label_dict.items()}
         
         # Load images
@@ -89,33 +83,25 @@ class MHCoverDataset(Dataset):
         return image, self.label_dict[label[0]]
 
 
-def get_dataloader(root_dir: str, df: pd.DataFrame, transformations: 'transforms.Compose',
-                   batch_size: int, workers: int, **kwargs):
+def get_dataloader(root_dir: str, df: pd.DataFrame, transformations: 'transforms.Compose', 
+                   fp_label_translator: str, batch_size: int, workers: int, **dlkwargs):
     """
     Function returns a dataloader with given parameters
 
     Params:
     ---------------
-    root_dir: str
-        Defines the path from where all images should be imported from
-
-    df: pd.DataFrame
-            Prefiltered Dataframe to load labels from (filtered according to Train-Val-test set)
-
-    transform: torch.utils.transforms.Compose
-        Compose of different transforms applied during import of an image.
-
-    batch_size; int
-        Size of the imported batch
-
-    workers: int
-        Amount of CPU workers for the loading of data into gpu.
+    root_dir: str          Defines the path from where all images should be imported from
+    df: pd.DataFrame       Prefiltered Dataframe to load labels from (filtered according to Train-Val-test set)
+    transformations:       Compose of different transforms applied during import of an image.
+    fp_label_translator:   File path to pickle file with label translations.
+    batch_size; int        Size of the imported batch
+    workers: int           Amount of CPU workers for the loading of data into gpu.
     """
-
     custom_dataset = MHCoverDataset(root_dir=root_dir, df=df, 
-                                    transform=transformations)
+                                    transform=transformations, 
+                                    fp_label_translator=fp_label_translator)
 
     return DataLoader(dataset=custom_dataset,
                       batch_size=batch_size,
                       num_workers=workers, 
-                      **kwargs)
+                      **dlkwargs)
