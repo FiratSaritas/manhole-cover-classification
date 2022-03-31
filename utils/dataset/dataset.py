@@ -13,8 +13,8 @@ class MHCoverDataset(Dataset):
     Class defines custom Dataset as a workaround to the ImageFolder class
     """
 
-    def __init__(self, root_dir: str, df: pd.DataFrame, transform: 'transforms.Compose' = None, fp_label_translator: 'str', 
-                 label_indexer: str = 'label'):
+    def __init__(self, root_dir: str, df: pd.DataFrame,  fp_label_translator: 'str', 
+                 transform: 'transforms.Compose' = None, label_indexer: str = 'label'):
         """
         Initializes the dataset class.
 
@@ -29,6 +29,7 @@ class MHCoverDataset(Dataset):
         """
         self.root_dir = root_dir
         self.df = df
+        self.fp_label_translator = fp_label_translator
         self.transform = transform
         self.label_indexer = label_indexer
         self.label_dict = None
@@ -42,16 +43,15 @@ class MHCoverDataset(Dataset):
         Matches Data in Folder with the ones in the filtered pd.DataFrame
         """
         # Label dict
-         with open(self.fp_label_translator, 'rb') as pkl_file:
+        with open(self.fp_label_translator, 'rb') as pkl_file:
             self.label_dict = pickle.load(pkl_file)
         self.label_dict_r = {i:label for label, i in self.label_dict.items()}
         
         # Load images
-        all_images = np.array([img for img in os.listdir(self.root_dir) if '.png' in img])
-        # Only select thos images within the dataframe
-        mask = np.isin(all_images, self.df['filename'].to_numpy()) 
-        self._images = all_images[mask]
-        assert self.df.shape[0] == self._images.shape[0]
+        self._images = np.array([img for img in os.listdir(self.root_dir) if '.png' in img])
+        
+        # Only select thos images within the dataframe        
+        assert self.df.shape[0] == self._images.shape[0], f'{self.df.shape[0]} - {self._images.shape[0]}'
         
         return self
     
@@ -76,9 +76,11 @@ class MHCoverDataset(Dataset):
         if self.transform:
             image = self.transform(image)
 
-        # Load label
-        label = self.df.loc[self.df['filename'] == self._images[idx], self.label_indexer].to_list()
+        # Load label        
+        label = self.df.loc[self.df['image'] == self._images[idx], self.label_indexer].to_list()
+        
         assert len(label) == 1
+        
                 
         return image, self.label_dict[label[0]]
 
