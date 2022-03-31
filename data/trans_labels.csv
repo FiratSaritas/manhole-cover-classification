@@ -6324,3 +6324,789 @@ image,transforms,set,label
 100042300.png,fliph_orig_rcont,train,Andere/-
 100105900.png,orig_raff_rinv,train,Andere/-
 100105900.png,jit_orig_rcrop,train,Andere/-
+                                                                                                                                                                               llguss/Aufklappbar
+478,100056900.png,blur_fliph_pers,train,Rost/Strassenrost
+5312,100170300.png,rcrop_rinv_rshrp,train,Rost/Strassenrost gewoelbt
+5140,100099300.png,raff_rcont_rinv,train,Rost/Strassenrost gewoelbt
+966,100058100.png,fliph_flipv_rinv,train,Vollguss/Handgriff geschlossen
+4213,100007300.png,orig_rot_rshrp,train,Rost/Einlauf rund
+1369,100101700.png,flipv_rcont_rinv,train,Gussbeton/Pickelloch belueftet
+5927,100035300.png,jit_pers_rinv,train,Andere/-
+201,100179200.png,orig_rcont_rshrp,train,Rost/Strassenrost
+3040,100199600.png,fliph_orig_rcrop,train,Gussbeton/Handgriff mitte
+399,100031500.png,blur_flipv_rinv,train,Rost/Strassenrost
+73,100130100.png,fliph_jit_orig,train,Rost/Strassenrost
+375,100065000.png,raff_rcont_rot,train,Rost/Strassenrost
+6008,100027700.png,blur_fliph_rcrop,train,Andere/-
+1277,100129600.png,0,val,Rost/Strassenrost
+3974,100062500.png,rcrop_rinv_rot,train,Rost/Einlauf rund
+2057,100130400.png,raff_rcrop_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+4553,100073600.png,orig_rinv_rshrp,train,Gussbeton/Handgriff seitlich
+5819,100112700.png,rcont_rcrop_rshrp,train,Vollguss/Aufklappbar
+3153,100175800.png,blur_orig_rinv,train,Gussbeton/Handgriff mitte
+5553,100160800.png,jit_pers_rot,train,Vollguss/Aufklappbar
+1331,100096500.png,flipv_jit_rot,train,Gussbeton/Pickelloch belueftet
+5955,100098400.png,fliph_flipv_rcont,train,Andere/-
+629,100172900.png,jit_rcont_rot,train,Vollguss/Handgriff geschlossen
+6275,100131600.png,fliph_flipv_pers,train,Andere/-
+2733,100010600.png,blur_rcont_rot,train,Gussbeton/Pickelloch geschlossen
+5256,100198400.png,fliph_orig_pers,train,Rost/Strassenrost gewoelbt
+227,100171400.png,blur_raff_rinv,train,Rost/Strassenrost
+227,100102400.png,0,val,Vollguss/Handgriff geschlossen
+1105,100191700.png,jit_rcrop_rinv,train,Gussbeton/Pickelloch belueftet
+1308,100053200.png,rcrop_rinv_rshrp,train,Gussbeton/Pickelloch belueftet
+3758,100193500.png,orig_raff_rinv,train,Vollguss/Pickelloch belueftet
+4397,100185700.png,rcrop_rinv_rshrp,train,Rost/Einlauf rund
+1999,100161300.png,rcont_rcrop_rinv,train,"Vollguss/Handgriff geschlossen, verschraubt"
+3188,100207900.png,flipv_rcont_rinv,train,Gussbeton/Handgriff mitte
+3802,100148300.png,flipv_jit_rcrop,train,Vollguss/Pickelloch belueftet
+4752,100003000.png,raff_rinv_rshrp,train,Gussbeton/Handgriff seitlich
+699,100030400.png,jit_rinv_rshrp,train,Vollguss/Handgriff geschlossen
+6255,100015300.png,fliph_raff_rcrop,train,Andere/-
+5537,100144000.png,flipv_jit_raff,train,Vollguss/Aufklappbar
+4485,100117900.png,jit_orig_pers,train,Gussbeton/Handgriff seitlich
+851,100077400.png,flipv_jit_pers,train,Vollguss/Handgriff geschlossen
+4298,100000000.png,orig_rcont_rcrop,train,Rost/Einlauf rund
+6168,100095200.png,blur_fliph_raff,train,Andere/-
+5153,100109000.png,blur_rinv_rot,train,Rost/Strassenrost gewoelbt
+4556,100073600.png,rcont_rinv_rshrp,train,Gussbeton/Handgriff seitlich
+993,100058700.png,orig_rcrop_rot,train,Vollguss/Handgriff geschlossen
+4569,100112000.png,jit_pers_rcont,train,Gussbeton/Handgriff seitlich
+752,100188200.png,fliph_flipv_rinv,train,Vollguss/Handgriff geschlossen
+1142,100091200.png,fliph_rcrop_rshrp,train,Gussbeton/Pickelloch belueftet
+2198,100162400.png,blur_pers_raff,train,"Vollguss/Handgriff geschlossen, verschraubt"
+2722,100050400.png,blur_fliph_rcont,train,Gussbeton/Pickelloch geschlossen
+541,100088600.png,fliph_jit_raff,train,Vollguss/Handgriff geschlossen
+664,100210000.png,blur_fliph_rshrp,train,Vollguss/Handgriff geschlossen
+157,100197100.png,0,test,Vollguss/Handgriff geschlossen
+1904,100204900.png,orig_raff_rcrop,train,Vollguss/Pickelloch geschlossen
+633,100206900.png,fliph_orig_raff,train,Vollguss/Handgriff geschlossen
+5883,100070200.png,jit_rcont_rshrp,train,Andere/-
+927,100008200.png,flipv_rinv_rshrp,train,Vollguss/Handgriff geschlossen
+5815,100112700.png,flipv_pers_rinv,train,Vollguss/Aufklappbar
+4515,100099400.png,pers_raff_rot,train,Gussbeton/Handgriff seitlich
+2020,100135700.png,jit_rot_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+5024,100012300.png,fliph_jit_rcont,train,Rost/Strassenrost gewoelbt
+5228,100045200.png,rcont_rcrop_rot,train,Rost/Strassenrost gewoelbt
+3616,100111800.png,blur_fliph_pers,train,Vollguss/Pickelloch belueftet
+2153,100142800.png,rcrop_rinv_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+891,100022700.png,orig_pers_rshrp,train,Vollguss/Handgriff geschlossen
+1463,100032500.png,0,test,Rost/Strassenrost
+4700,100152500.png,orig_raff_rot,train,Gussbeton/Handgriff seitlich
+6089,100172200.png,pers_rcont_rot,train,Andere/-
+1314,100079600.png,0,test,Rost/Strassenrost
+4440,100149700.png,pers_rcont_rcrop,train,Rost/Einlauf rund
+4140,100042600.png,flipv_raff_rcont,train,Rost/Einlauf rund
+214,100057400.png,fliph_orig_pers,train,Rost/Strassenrost
+1171,100021500.png,orig_pers_rshrp,train,Gussbeton/Pickelloch belueftet
+3379,100153800.png,jit_rcrop_rot,train,Gussbeton/Handgriff mitte
+4768,100137200.png,pers_rot_rshrp,train,Gussbeton/Handgriff seitlich
+1794,100185400.png,blur_fliph_orig,train,Vollguss/Pickelloch geschlossen
+668,100186900.png,orig_rot_rshrp,train,Vollguss/Handgriff geschlossen
+6304,100086400.png,fliph_orig_rcrop,train,Andere/-
+1498,100116900.png,orig_rinv_rot,train,Vollguss/Pickelloch geschlossen
+3139,100175800.png,pers_rcrop_rinv,train,Gussbeton/Handgriff mitte
+4492,100051800.png,raff_rinv_rshrp,train,Gussbeton/Handgriff seitlich
+5463,100149600.png,blur_rinv_rot,train,Vollguss/Aufklappbar
+2340,100166000.png,flipv_rinv_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+3624,100180300.png,fliph_flipv_raff,train,Vollguss/Pickelloch belueftet
+5267,100009000.png,pers_rcont_rshrp,train,Rost/Strassenrost gewoelbt
+6143,100022200.png,rcrop_rinv_rshrp,train,Andere/-
+1842,100030800.png,flipv_orig_rcont,train,Vollguss/Pickelloch geschlossen
+225,100140900.png,0,val,Gussbeton/Handgriff seitlich
+972,100199500.png,jit_rcrop_rinv,train,Vollguss/Handgriff geschlossen
+1389,100191900.png,rcrop_rinv_rshrp,train,Gussbeton/Pickelloch belueftet
+2548,100014400.png,fliph_flipv_rinv,train,Gussbeton/Pickelloch geschlossen
+3633,100163100.png,orig_pers_rcrop,train,Vollguss/Pickelloch belueftet
+2359,100045600.png,orig_raff_rcont,train,"Vollguss/Handgriff geschlossen, verschraubt"
+2547,100017100.png,jit_raff_rcont,train,Gussbeton/Pickelloch geschlossen
+5493,100144000.png,jit_orig_rcrop,train,Vollguss/Aufklappbar
+4396,100185700.png,fliph_flipv_jit,train,Rost/Einlauf rund
+1627,100005000.png,pers_rcrop_rinv,train,Vollguss/Pickelloch geschlossen
+1711,100106000.png,blur_jit_rcrop,train,Vollguss/Pickelloch geschlossen
+1617,100071600.png,blur_pers_rshrp,train,Vollguss/Pickelloch geschlossen
+2148,100023800.png,orig_raff_rot,train,"Vollguss/Handgriff geschlossen, verschraubt"
+1679,100018400.png,fliph_flipv_pers,train,Vollguss/Pickelloch geschlossen
+4390,100134700.png,raff_rcrop_rot,train,Rost/Einlauf rund
+574,100051500.png,fliph_flipv_rot,train,Vollguss/Handgriff geschlossen
+803,100140500.png,flipv_jit_rot,train,Vollguss/Handgriff geschlossen
+1010,100207400.png,fliph_flipv_rinv,train,Gussbeton/Pickelloch belueftet
+1080,100200000.png,orig_pers_rot,train,Gussbeton/Pickelloch belueftet
+6031,100048600.png,blur_flipv_jit,train,Andere/-
+1268,100081800.png,fliph_orig_rot,train,Gussbeton/Pickelloch belueftet
+1708,100062200.png,blur_orig_rshrp,train,Vollguss/Pickelloch geschlossen
+1407,100204700.png,flipv_pers_rshrp,train,Gussbeton/Pickelloch belueftet
+472,100034700.png,rcont_rcrop_rshrp,train,Rost/Strassenrost
+492,100189100.png,fliph_flipv_orig,train,Rost/Strassenrost
+3620,100111800.png,flipv_raff_rot,train,Vollguss/Pickelloch belueftet
+2947,100025400.png,fliph_pers_rcont,train,Gussbeton/Pickelloch geschlossen
+3662,100200800.png,orig_raff_rshrp,train,Vollguss/Pickelloch belueftet
+866,100011400.png,blur_fliph_rot,train,Vollguss/Handgriff geschlossen
+6225,100019300.png,fliph_rcrop_rot,train,Andere/-
+6042,100182800.png,blur_fliph_rcrop,train,Andere/-
+1282,100174100.png,0,test,Gussbeton/Pickelloch belueftet
+4328,100085200.png,fliph_flipv_rcrop,train,Rost/Einlauf rund
+2321,100174600.png,orig_rcont_rinv,train,"Vollguss/Handgriff geschlossen, verschraubt"
+5162,100109000.png,raff_rcont_rshrp,train,Rost/Strassenrost gewoelbt
+2867,100163500.png,jit_rcont_rot,train,Gussbeton/Pickelloch geschlossen
+3339,100108400.png,pers_raff_rcont,train,Gussbeton/Handgriff mitte
+6298,100035100.png,rcrop_rot_rshrp,train,Andere/-
+4238,100206500.png,blur_orig_rot,train,Rost/Einlauf rund
+887,100073800.png,0,val,Vollguss/Handgriff geschlossen
+987,100178900.png,orig_rcont_rot,train,Vollguss/Handgriff geschlossen
+5419,100206100.png,jit_pers_rcont,train,Vollguss/Aufklappbar
+3279,100074500.png,flipv_pers_rinv,train,Gussbeton/Handgriff mitte
+54,100113600.png,flipv_jit_orig,train,Rost/Strassenrost
+4833,100033900.png,flipv_raff_rinv,train,Gussbeton/Handgriff seitlich
+1616,100146600.png,rcont_rcrop_rot,train,Vollguss/Pickelloch geschlossen
+194,100089900.png,pers_raff_rcont,train,Rost/Strassenrost
+6108,100011100.png,fliph_flipv_raff,train,Andere/-
+2515,100142500.png,fliph_pers_rot,train,Gussbeton/Pickelloch geschlossen
+5618,100215100.png,blur_jit_raff,train,Vollguss/Aufklappbar
+3600,100208300.png,blur_orig_rinv,train,Vollguss/Pickelloch belueftet
+2677,100150000.png,flipv_jit_pers,train,Gussbeton/Pickelloch geschlossen
+1208,100024600.png,fliph_rot_rshrp,train,Gussbeton/Pickelloch belueftet
+630,100105000.png,blur_orig_rinv,train,Vollguss/Handgriff geschlossen
+5598,100215100.png,blur_pers_rcrop,train,Vollguss/Aufklappbar
+162,100017200.png,0,val,Vollguss/Aufklappbar
+1465,100060500.png,blur_rinv_rot,train,Gussbeton/Pickelloch belueftet
+3037,100199600.png,blur_fliph_rcrop,train,Gussbeton/Handgriff mitte
+4181,100037000.png,flipv_orig_rot,train,Rost/Einlauf rund
+329,100011000.png,orig_rcont_rcrop,train,Rost/Strassenrost
+286,100027400.png,blur_orig_rinv,train,Rost/Strassenrost
+5321,100045500.png,jit_rcrop_rinv,train,Rost/Strassenrost gewoelbt
+5845,100171700.png,orig_pers_rshrp,train,Andere/-
+3215,100068500.png,pers_raff_rinv,train,Gussbeton/Handgriff mitte
+2041,100135300.png,orig_rcrop_rinv,train,"Vollguss/Handgriff geschlossen, verschraubt"
+6309,100187700.png,fliph_flipv_rshrp,train,Andere/-
+2252,100155000.png,fliph_jit_rot,train,"Vollguss/Handgriff geschlossen, verschraubt"
+1579,100052800.png,orig_rinv_rot,train,Vollguss/Pickelloch geschlossen
+5276,100009000.png,blur_flipv_rinv,train,Rost/Strassenrost gewoelbt
+5377,100100000.png,jit_pers_rot,train,Rost/Strassenrost gewoelbt
+2336,100172000.png,fliph_jit_rcrop,train,"Vollguss/Handgriff geschlossen, verschraubt"
+2971,100211000.png,blur_pers_rshrp,train,Gussbeton/Pickelloch geschlossen
+2105,100195200.png,0,val,Rost/Strassenrost
+4826,100033900.png,raff_rcrop_rshrp,train,Gussbeton/Handgriff seitlich
+2590,100014300.png,flipv_jit_rcont,train,Gussbeton/Pickelloch geschlossen
+2199,100162400.png,flipv_rcont_rot,train,"Vollguss/Handgriff geschlossen, verschraubt"
+1688,100097700.png,blur_rot_rshrp,train,Vollguss/Pickelloch geschlossen
+3948,100086800.png,rinv_rot_rshrp,train,Vollguss/Pickelloch belueftet
+2165,100200500.png,0,test,Vollguss/Pickelloch geschlossen
+2374,100171300.png,blur_pers_rot,train,"Vollguss/Handgriff geschlossen, verschraubt"
+5210,100045200.png,fliph_rot_rshrp,train,Rost/Strassenrost gewoelbt
+726,100015900.png,blur_pers_raff,train,Vollguss/Handgriff geschlossen
+2924,100153000.png,blur_flipv_rshrp,train,Gussbeton/Pickelloch geschlossen
+259,100200700.png,rcont_rinv_rot,train,Rost/Strassenrost
+1778,100155800.png,jit_raff_rshrp,train,Vollguss/Pickelloch geschlossen
+5218,100045200.png,blur_fliph_rot,train,Rost/Strassenrost gewoelbt
+4323,100141000.png,flipv_rinv_rot,train,Rost/Einlauf rund
+5961,100038400.png,raff_rcrop_rinv,train,Andere/-
+860,100059900.png,flipv_orig_rcrop,train,Vollguss/Handgriff geschlossen
+3833,100068000.png,flipv_orig_raff,train,Vollguss/Pickelloch belueftet
+3170,100058500.png,blur_rcrop_rshrp,train,Gussbeton/Handgriff mitte
+4389,100134700.png,jit_rcont_rcrop,train,Rost/Einlauf rund
+3723,100052100.png,flipv_jit_rshrp,train,Vollguss/Pickelloch belueftet
+2118,100095800.png,blur_fliph_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+791,100096000.png,jit_raff_rcrop,train,Vollguss/Handgriff geschlossen
+3092,100132900.png,fliph_pers_rshrp,train,Gussbeton/Handgriff mitte
+4314,100215400.png,fliph_jit_raff,train,Rost/Einlauf rund
+5461,100149600.png,raff_rcrop_rshrp,train,Vollguss/Aufklappbar
+4861,100202900.png,pers_rcont_rinv,train,Gussbeton/Handgriff seitlich
+3638,100142200.png,raff_rot_rshrp,train,Vollguss/Pickelloch belueftet
+704,100156000.png,blur_fliph_jit,train,Vollguss/Handgriff geschlossen
+4538,100076600.png,flipv_raff_rshrp,train,Gussbeton/Handgriff seitlich
+4002,100016100.png,raff_rcont_rot,train,Rost/Einlauf rund
+577,100102300.png,rcont_rot_rshrp,train,Vollguss/Handgriff geschlossen
+6129,100005700.png,jit_orig_rshrp,train,Andere/-
+3839,100101600.png,orig_rcont_rinv,train,Vollguss/Pickelloch belueftet
+2952,100134900.png,flipv_jit_rinv,train,Gussbeton/Pickelloch geschlossen
+849,100132100.png,rcrop_rinv_rot,train,Vollguss/Handgriff geschlossen
+4632,100186700.png,flipv_rcont_rinv,train,Gussbeton/Handgriff seitlich
+3463,100084400.png,pers_rcont_rshrp,train,Gussbeton/Handgriff mitte
+3372,100153800.png,raff_rinv_rshrp,train,Gussbeton/Handgriff mitte
+4127,100120800.png,blur_orig_raff,train,Rost/Einlauf rund
+1138,100143000.png,0,val,Rost/Strassenrost
+216,100212000.png,jit_pers_rinv,train,Rost/Strassenrost
+988,100178900.png,pers_raff_rot,train,Vollguss/Handgriff geschlossen
+6110,100105100.png,pers_rcont_rcrop,train,Andere/-
+34,100202700.png,blur_flipv_jit,train,Rost/Strassenrost
+2119,100095800.png,jit_raff_rot,train,"Vollguss/Handgriff geschlossen, verschraubt"
+2271,100119800.png,fliph_jit_rcont,train,"Vollguss/Handgriff geschlossen, verschraubt"
+3349,100108400.png,pers_rcont_rot,train,Gussbeton/Handgriff mitte
+2171,100174300.png,flipv_raff_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+5808,100112700.png,flipv_pers_rcrop,train,Vollguss/Aufklappbar
+3424,100027000.png,fliph_jit_rcont,train,Gussbeton/Handgriff mitte
+2887,100000100.png,jit_pers_rinv,train,Gussbeton/Pickelloch geschlossen
+1144,100091200.png,blur_jit_rcrop,train,Gussbeton/Pickelloch belueftet
+356,100170800.png,blur_pers_rcrop,train,Rost/Strassenrost
+1333,100096500.png,blur_rot_rshrp,train,Gussbeton/Pickelloch belueftet
+1117,100036100.png,pers_raff_rinv,train,Gussbeton/Pickelloch belueftet
+5617,100215100.png,flipv_jit_rcrop,train,Vollguss/Aufklappbar
+2839,100071900.png,flipv_pers_rinv,train,Gussbeton/Pickelloch geschlossen
+1353,100217500.png,0,test,Vollguss/Pickelloch geschlossen
+240,100163600.png,orig_raff_rinv,train,Rost/Strassenrost
+383,100162700.png,blur_pers_rinv,train,Rost/Strassenrost
+706,100019500.png,fliph_pers_rinv,train,Vollguss/Handgriff geschlossen
+5685,100129700.png,fliph_flipv_raff,train,Vollguss/Aufklappbar
+4539,100076600.png,jit_rcrop_rot,train,Gussbeton/Handgriff seitlich
+6092,100190900.png,flipv_pers_rcont,train,Andere/-
+1956,100174900.png,0,val,Rost/Strassenrost
+2796,100022800.png,blur_rcont_rot,train,Gussbeton/Pickelloch geschlossen
+2059,100130400.png,blur_orig_rcont,train,"Vollguss/Handgriff geschlossen, verschraubt"
+754,100115000.png,blur_fliph_raff,train,Vollguss/Handgriff geschlossen
+613,100193300.png,flipv_pers_rot,train,Vollguss/Handgriff geschlossen
+1402,100192300.png,blur_pers_rcrop,train,Gussbeton/Pickelloch belueftet
+5658,100129700.png,flipv_jit_rot,train,Vollguss/Aufklappbar
+2127,100072300.png,flipv_orig_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+3422,100027000.png,pers_rcrop_rinv,train,Gussbeton/Handgriff mitte
+3722,100052100.png,raff_rcont_rshrp,train,Vollguss/Pickelloch belueftet
+5849,100100800.png,blur_rinv_rshrp,train,Andere/-
+798,100079100.png,fliph_flipv_raff,train,Vollguss/Handgriff geschlossen
+109,100048900.png,orig_rcrop_rinv,train,Rost/Strassenrost
+5399,100206100.png,raff_rcont_rshrp,train,Vollguss/Aufklappbar
+1742,100036300.png,flipv_jit_pers,train,Vollguss/Pickelloch geschlossen
+266,100186000.png,flipv_raff_rcrop,train,Rost/Strassenrost
+5274,100009000.png,fliph_jit_rshrp,train,Rost/Strassenrost gewoelbt
+1262,100037900.png,pers_rcont_rshrp,train,Gussbeton/Pickelloch belueftet
+519,100213900.png,pers_raff_rinv,train,Vollguss/Handgriff geschlossen
+3127,100069500.png,blur_orig_rcont,train,Gussbeton/Handgriff mitte
+4476,100117900.png,fliph_jit_raff,train,Gussbeton/Handgriff seitlich
+3877,100197900.png,flipv_rcrop_rinv,train,Vollguss/Pickelloch belueftet
+4159,100021800.png,fliph_flipv_raff,train,Rost/Einlauf rund
+3523,100181700.png,jit_pers_rot,train,Vollguss/Pickelloch belueftet
+6212,100050100.png,fliph_jit_rinv,train,Andere/-
+3313,100091700.png,fliph_raff_rcont,train,Gussbeton/Handgriff mitte
+5764,100215800.png,fliph_orig_pers,train,Vollguss/Aufklappbar
+2155,100142800.png,blur_rcrop_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+5326,100045500.png,fliph_pers_rcont,train,Rost/Strassenrost gewoelbt
+5548,100160800.png,jit_orig_rcont,train,Vollguss/Aufklappbar
+1257,100110200.png,blur_raff_rinv,train,Gussbeton/Pickelloch belueftet
+5275,100009000.png,blur_orig_rcont,train,Rost/Strassenrost gewoelbt
+597,100131200.png,fliph_rinv_rot,train,Vollguss/Handgriff geschlossen
+4883,100085600.png,flipv_jit_rcrop,train,Gussbeton/Handgriff seitlich
+4363,100061800.png,flipv_pers_rcont,train,Rost/Einlauf rund
+3423,100027000.png,jit_orig_rinv,train,Gussbeton/Handgriff mitte
+785,100004300.png,0,val,Vollguss/Handgriff geschlossen
+4111,100177500.png,jit_raff_rot,train,Rost/Einlauf rund
+1412,100075800.png,blur_raff_rshrp,train,Gussbeton/Pickelloch belueftet
+818,100154700.png,fliph_pers_rshrp,train,Vollguss/Handgriff geschlossen
+2438,100093200.png,blur_flipv_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+4696,100152500.png,raff_rinv_rshrp,train,Gussbeton/Handgriff seitlich
+2991,100147900.png,flipv_jit_raff,train,Gussbeton/Handgriff mitte
+1682,100010800.png,0,test,Vollguss/Handgriff geschlossen
+1572,100217800.png,0,test,Gussbeton/Pickelloch geschlossen
+1378,100081700.png,flipv_jit_orig,train,Gussbeton/Pickelloch belueftet
+5542,100160800.png,fliph_raff_rinv,train,Vollguss/Aufklappbar
+3454,100084400.png,fliph_raff_rcrop,train,Gussbeton/Handgriff mitte
+3795,100138000.png,rcont_rinv_rot,train,Vollguss/Pickelloch belueftet
+158,100127100.png,orig_raff_rot,train,Rost/Strassenrost
+1556,100118600.png,blur_pers_rshrp,train,Vollguss/Pickelloch geschlossen
+3970,100052000.png,fliph_pers_rcrop,train,Rost/Einlauf rund
+3126,100069500.png,blur_orig_pers,train,Gussbeton/Handgriff mitte
+796,100075300.png,blur_rot_rshrp,train,Vollguss/Handgriff geschlossen
+388,100090300.png,jit_rcont_rcrop,train,Rost/Strassenrost
+2560,100097900.png,raff_rcont_rinv,train,Gussbeton/Pickelloch geschlossen
+2990,100147900.png,blur_flipv_raff,train,Gussbeton/Handgriff mitte
+6297,100035100.png,orig_raff_rcrop,train,Andere/-
+3618,100111800.png,fliph_orig_rcrop,train,Vollguss/Pickelloch belueftet
+4922,100181500.png,flipv_jit_pers,train,Gussbeton/Handgriff seitlich
+4379,100015100.png,blur_orig_rcrop,train,Rost/Einlauf rund
+3955,100151400.png,flipv_rcrop_rinv,train,Rost/Einlauf rund
+2636,100089400.png,jit_orig_rinv,train,Gussbeton/Pickelloch geschlossen
+3835,100068000.png,blur_jit_rshrp,train,Vollguss/Pickelloch belueftet
+1562,100155300.png,blur_orig_pers,train,Vollguss/Pickelloch geschlossen
+336,100209100.png,blur_fliph_raff,train,Rost/Strassenrost
+599,100104400.png,blur_orig_raff,train,Vollguss/Handgriff geschlossen
+2866,100116700.png,fliph_jit_rinv,train,Gussbeton/Pickelloch geschlossen
+3289,100074500.png,pers_rinv_rshrp,train,Gussbeton/Handgriff mitte
+727,100115600.png,blur_raff_rot,train,Vollguss/Handgriff geschlossen
+2710,100032600.png,blur_flipv_rinv,train,Gussbeton/Pickelloch geschlossen
+1027,100169200.png,flipv_pers_rcrop,train,Gussbeton/Pickelloch belueftet
+4244,100022600.png,jit_pers_rshrp,train,Rost/Einlauf rund
+1158,100206000.png,0,test,Rost/Strassenrost
+529,100122200.png,blur_pers_rshrp,train,Vollguss/Handgriff geschlossen
+377,100094300.png,pers_rot_rshrp,train,Rost/Strassenrost
+780,100176100.png,flipv_pers_raff,train,Vollguss/Handgriff geschlossen
+3331,100133500.png,jit_rinv_rshrp,train,Gussbeton/Handgriff mitte
+1583,100148900.png,blur_orig_pers,train,Vollguss/Pickelloch geschlossen
+4695,100152500.png,orig_pers_rshrp,train,Gussbeton/Handgriff seitlich
+616,100089100.png,jit_rcrop_rot,train,Vollguss/Handgriff geschlossen
+1341,100043900.png,flipv_pers_rot,train,Gussbeton/Pickelloch belueftet
+4949,100006600.png,fliph_rcont_rshrp,train,Rost/Strassenrost gewoelbt
+3305,100091700.png,blur_orig_raff,train,Gussbeton/Handgriff mitte
+3308,100091700.png,blur_fliph_rinv,train,Gussbeton/Handgriff mitte
+5783,100215800.png,orig_pers_rinv,train,Vollguss/Aufklappbar
+2575,100165600.png,fliph_jit_rcont,train,Gussbeton/Pickelloch geschlossen
+1632,100184000.png,blur_rcrop_rinv,train,Vollguss/Pickelloch geschlossen
+5354,100118800.png,rcont_rinv_rot,train,Rost/Strassenrost gewoelbt
+1283,100031800.png,0,val,Rost/Strassenrost
+591,100182100.png,0,test,Rost/Strassenrost
+921,100001200.png,0,val,Rost/Einlauf rund
+4673,100147000.png,flipv_raff_rcont,train,Gussbeton/Handgriff seitlich
+5183,100044500.png,pers_rcont_rinv,train,Rost/Strassenrost gewoelbt
+4969,100211200.png,blur_pers_rinv,train,Rost/Strassenrost gewoelbt
+579,100032000.png,fliph_orig_rcont,train,Vollguss/Handgriff geschlossen
+161,100103500.png,flipv_orig_rshrp,train,Rost/Strassenrost
+5287,100009000.png,fliph_jit_rcont,train,Rost/Strassenrost gewoelbt
+1197,100015200.png,fliph_orig_rcrop,train,Gussbeton/Pickelloch belueftet
+5371,100118800.png,fliph_rcrop_rinv,train,Rost/Strassenrost gewoelbt
+6088,100172200.png,flipv_raff_rcont,train,Andere/-
+292,100212700.png,fliph_flipv_rcont,train,Rost/Strassenrost
+2563,100097900.png,blur_flipv_rot,train,Gussbeton/Pickelloch geschlossen
+3438,100154600.png,fliph_jit_raff,train,Gussbeton/Handgriff mitte
+2982,100147900.png,blur_jit_rcrop,train,Gussbeton/Handgriff mitte
+1545,100108900.png,0,test,Rost/Einlauf rund
+700,100165500.png,blur_jit_raff,train,Vollguss/Handgriff geschlossen
+5356,100118800.png,blur_fliph_rshrp,train,Rost/Strassenrost gewoelbt
+2831,100034400.png,blur_orig_rot,train,Gussbeton/Pickelloch geschlossen
+200,100178200.png,raff_rinv_rot,train,Rost/Strassenrost
+3087,100097600.png,orig_rot_rshrp,train,Gussbeton/Handgriff mitte
+3359,100153800.png,fliph_rcont_rcrop,train,Gussbeton/Handgriff mitte
+6075,100124600.png,orig_rinv_rshrp,train,Andere/-
+5941,100206600.png,fliph_raff_rcont,train,Andere/-
+1143,100091200.png,flipv_orig_rot,train,Gussbeton/Pickelloch belueftet
+3333,100133500.png,blur_flipv_rot,train,Gussbeton/Handgriff mitte
+2536,100073900.png,orig_pers_rinv,train,Gussbeton/Pickelloch geschlossen
+4183,100037000.png,blur_flipv_rcrop,train,Rost/Einlauf rund
+1237,100152100.png,blur_rcont_rshrp,train,Gussbeton/Pickelloch belueftet
+1460,100213400.png,blur_rot_rshrp,train,Gussbeton/Pickelloch belueftet
+2687,100081100.png,jit_rcont_rinv,train,Gussbeton/Pickelloch geschlossen
+4831,100033900.png,flipv_jit_pers,train,Gussbeton/Handgriff seitlich
+75,100166300.png,fliph_pers_rshrp,train,Rost/Strassenrost
+2094,100183900.png,blur_fliph_raff,train,"Vollguss/Handgriff geschlossen, verschraubt"
+6319,100042300.png,pers_raff_rshrp,train,Andere/-
+3693,100110300.png,fliph_raff_rcrop,train,Vollguss/Pickelloch belueftet
+4473,100104500.png,orig_rcont_rshrp,train,Gussbeton/Handgriff seitlich
+380,100210900.png,flipv_rcont_rot,train,Rost/Strassenrost
+3456,100084400.png,blur_flipv_rcrop,train,Gussbeton/Handgriff mitte
+2472,100215200.png,fliph_raff_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+5843,100171700.png,blur_rinv_rshrp,train,Andere/-
+80,100150400.png,0,test,Vollguss/Handgriff geschlossen
+3239,100032300.png,flipv_rcrop_rshrp,train,Gussbeton/Handgriff mitte
+5521,100144000.png,pers_rinv_rshrp,train,Vollguss/Aufklappbar
+2315,100148800.png,blur_rcont_rot,train,"Vollguss/Handgriff geschlossen, verschraubt"
+1097,100060700.png,raff_rinv_rshrp,train,Gussbeton/Pickelloch belueftet
+3736,100148700.png,raff_rinv_rshrp,train,Vollguss/Pickelloch belueftet
+2851,100119900.png,orig_raff_rcrop,train,Gussbeton/Pickelloch geschlossen
+4597,100058400.png,pers_raff_rinv,train,Gussbeton/Handgriff seitlich
+3121,100069500.png,fliph_flipv_rcrop,train,Gussbeton/Handgriff mitte
+407,100067000.png,0,test,Rost/Einlauf rund
+952,100040700.png,orig_raff_rshrp,train,Vollguss/Handgriff geschlossen
+5918,100009900.png,flipv_rinv_rshrp,train,Andere/-
+1164,100196900.png,fliph_raff_rot,train,Gussbeton/Pickelloch belueftet
+4442,100149700.png,flipv_raff_rcont,train,Rost/Einlauf rund
+5611,100215100.png,blur_flipv_rinv,train,Vollguss/Aufklappbar
+2102,100197400.png,orig_rcont_rcrop,train,"Vollguss/Handgriff geschlossen, verschraubt"
+1572,100059400.png,fliph_jit_rot,train,Vollguss/Pickelloch geschlossen
+5152,100109000.png,rcont_rcrop_rshrp,train,Rost/Strassenrost gewoelbt
+389,100153600.png,blur_fliph_flipv,train,Rost/Strassenrost
+323,100107900.png,pers_rinv_rshrp,train,Rost/Strassenrost
+3374,100153800.png,jit_pers_rcont,train,Gussbeton/Handgriff mitte
+3294,100091700.png,fliph_rcont_rot,train,Gussbeton/Handgriff mitte
+3232,100032300.png,orig_pers_rinv,train,Gussbeton/Handgriff mitte
+2466,100214400.png,rcrop_rinv_rot,train,"Vollguss/Handgriff geschlossen, verschraubt"
+4479,100117900.png,raff_rinv_rot,train,Gussbeton/Handgriff seitlich
+913,100145300.png,fliph_jit_rinv,train,Vollguss/Handgriff geschlossen
+5968,100026400.png,blur_rcont_rot,train,Andere/-
+1187,100168500.png,rcont_rcrop_rshrp,train,Gussbeton/Pickelloch belueftet
+4832,100033900.png,fliph_rot_rshrp,train,Gussbeton/Handgriff seitlich
+207,100208200.png,fliph_raff_rot,train,Rost/Strassenrost
+177,100068100.png,flipv_jit_pers,train,Rost/Strassenrost
+2673,100212800.png,fliph_rcont_rcrop,train,Gussbeton/Pickelloch geschlossen
+551,100167100.png,blur_raff_rshrp,train,Vollguss/Handgriff geschlossen
+2883,100050000.png,fliph_rinv_rot,train,Gussbeton/Pickelloch geschlossen
+130,100039200.png,fliph_rcrop_rot,train,Rost/Strassenrost
+3160,100058500.png,flipv_jit_rcrop,train,Gussbeton/Handgriff mitte
+2981,100147900.png,flipv_rcrop_rinv,train,Gussbeton/Handgriff mitte
+1921,100113300.png,0,test,Vollguss/Handgriff geschlossen
+1608,100156400.png,blur_raff_rinv,train,Vollguss/Pickelloch geschlossen
+6191,100050800.png,rcont_rinv_rshrp,train,Andere/-
+2037,100080000.png,jit_pers_rot,train,"Vollguss/Handgriff geschlossen, verschraubt"
+1593,100183700.png,fliph_rcrop_rot,train,Vollguss/Pickelloch geschlossen
+1652,100181400.png,orig_raff_rcont,train,Vollguss/Pickelloch geschlossen
+5761,100215800.png,blur_flipv_rinv,train,Vollguss/Aufklappbar
+2584,100097100.png,fliph_raff_rot,train,Gussbeton/Pickelloch geschlossen
+2055,100130400.png,flipv_rot_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+1168,100191600.png,0,val,Vollguss/Handgriff geschlossen
+3928,100048500.png,blur_orig_rcont,train,Vollguss/Pickelloch belueftet
+5432,100206100.png,jit_raff_rshrp,train,Vollguss/Aufklappbar
+1601,100216200.png,flipv_rcrop_rshrp,train,Vollguss/Pickelloch geschlossen
+2086,100118900.png,blur_raff_rot,train,"Vollguss/Handgriff geschlossen, verschraubt"
+49,100057100.png,raff_rcont_rot,train,Rost/Strassenrost
+3186,100207900.png,fliph_jit_pers,train,Gussbeton/Handgriff mitte
+4327,100141000.png,jit_orig_pers,train,Rost/Einlauf rund
+953,100150500.png,blur_flipv_rot,train,Vollguss/Handgriff geschlossen
+1295,100173200.png,flipv_orig_pers,train,Gussbeton/Pickelloch belueftet
+3017,100057200.png,fliph_jit_rot,train,Gussbeton/Handgriff mitte
+4103,100027600.png,fliph_raff_rot,train,Rost/Einlauf rund
+4112,100177500.png,rcont_rcrop_rshrp,train,Rost/Einlauf rund
+4547,100076600.png,fliph_flipv_rshrp,train,Gussbeton/Handgriff seitlich
+6224,100019300.png,blur_orig_rot,train,Andere/-
+754,100194800.png,0,test,Vollguss/Handgriff geschlossen
+4602,100058400.png,flipv_jit_rshrp,train,Gussbeton/Handgriff seitlich
+1812,100170600.png,jit_raff_rcont,train,Vollguss/Pickelloch geschlossen
+2850,100075100.png,blur_pers_rcrop,train,Gussbeton/Pickelloch geschlossen
+490,100136900.png,fliph_flipv_rcont,train,Rost/Strassenrost
+4366,100061800.png,pers_rcont_rcrop,train,Rost/Einlauf rund
+5936,100206600.png,fliph_pers_raff,train,Andere/-
+3063,100170000.png,jit_rinv_rshrp,train,Gussbeton/Handgriff mitte
+698,100030400.png,jit_rcrop_rot,train,Vollguss/Handgriff geschlossen
+6127,100005700.png,orig_raff_rcrop,train,Andere/-
+3273,100074500.png,blur_orig_rot,train,Gussbeton/Handgriff mitte
+121,100140000.png,fliph_rinv_rshrp,train,Rost/Strassenrost
+3552,100171100.png,fliph_flipv_rcrop,train,Vollguss/Pickelloch belueftet
+4532,100116600.png,orig_raff_rinv,train,Gussbeton/Handgriff seitlich
+5734,100059700.png,blur_fliph_rcont,train,Vollguss/Aufklappbar
+3593,100089000.png,fliph_jit_raff,train,Vollguss/Pickelloch belueftet
+2720,100050400.png,rcont_rcrop_rinv,train,Gussbeton/Pickelloch geschlossen
+3023,100199600.png,flipv_jit_rcrop,train,Gussbeton/Handgriff mitte
+1048,100135800.png,blur_fliph_rinv,train,Gussbeton/Pickelloch belueftet
+3044,100199600.png,pers_rinv_rot,train,Gussbeton/Handgriff mitte
+4731,100153100.png,fliph_flipv_rinv,train,Gussbeton/Handgriff seitlich
+4813,100100200.png,flipv_jit_pers,train,Gussbeton/Handgriff seitlich
+4348,100051000.png,fliph_rinv_rot,train,Rost/Einlauf rund
+4393,100185700.png,blur_flipv_rshrp,train,Rost/Einlauf rund
+3310,100091700.png,blur_rcont_rcrop,train,Gussbeton/Handgriff mitte
+1294,100175200.png,blur_orig_rot,train,Gussbeton/Pickelloch belueftet
+3152,100175800.png,jit_orig_rinv,train,Gussbeton/Handgriff mitte
+4113,100177500.png,fliph_pers_rcrop,train,Rost/Einlauf rund
+6141,100022200.png,blur_fliph_jit,train,Andere/-
+1817,100005800.png,flipv_jit_rshrp,train,Vollguss/Pickelloch geschlossen
+2331,100192600.png,blur_jit_orig,train,"Vollguss/Handgriff geschlossen, verschraubt"
+2397,100104600.png,raff_rcont_rinv,train,"Vollguss/Handgriff geschlossen, verschraubt"
+4156,100021800.png,rcont_rcrop_rot,train,Rost/Einlauf rund
+2906,100124900.png,blur_rcrop_rot,train,Gussbeton/Pickelloch geschlossen
+4462,100104500.png,pers_rinv_rot,train,Gussbeton/Handgriff seitlich
+3952,100151400.png,raff_rcrop_rshrp,train,Rost/Einlauf rund
+2286,100146400.png,jit_rcont_rot,train,"Vollguss/Handgriff geschlossen, verschraubt"
+4024,100110900.png,blur_fliph_rcrop,train,Rost/Einlauf rund
+1381,100065500.png,fliph_jit_rshrp,train,Gussbeton/Pickelloch belueftet
+2170,100080100.png,fliph_orig_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+3923,100077200.png,pers_raff_rot,train,Vollguss/Pickelloch belueftet
+4345,100051000.png,fliph_pers_rshrp,train,Rost/Einlauf rund
+6230,100150300.png,blur_rinv_rot,train,Andere/-
+4179,100069000.png,jit_orig_raff,train,Rost/Einlauf rund
+5741,100215800.png,orig_raff_rot,train,Vollguss/Aufklappbar
+2604,100106500.png,blur_rcont_rinv,train,Gussbeton/Pickelloch geschlossen
+5921,100009900.png,orig_rinv_rot,train,Andere/-
+4361,100077800.png,flipv_rcont_rinv,train,Rost/Einlauf rund
+3399,100046300.png,fliph_rinv_rshrp,train,Gussbeton/Handgriff mitte
+6082,100026500.png,blur_jit_pers,train,Andere/-
+1161,100093000.png,0,val,Gussbeton/Handgriff mitte
+2869,100163500.png,blur_raff_rcrop,train,Gussbeton/Pickelloch geschlossen
+4494,100051800.png,fliph_raff_rcrop,train,Gussbeton/Handgriff seitlich
+218,100175100.png,blur_fliph_raff,train,Rost/Strassenrost
+3286,100074500.png,jit_pers_rcrop,train,Gussbeton/Handgriff mitte
+3691,100139400.png,blur_rcont_rcrop,train,Vollguss/Pickelloch belueftet
+1315,100027900.png,jit_pers_rcrop,train,Gussbeton/Pickelloch belueftet
+209,100140300.png,0,val,Rost/Strassenrost
+367,100002100.png,0,test,Rost/Strassenrost
+2819,100138200.png,rcont_rinv_rot,train,Gussbeton/Pickelloch geschlossen
+5158,100109000.png,blur_fliph_flipv,train,Rost/Strassenrost gewoelbt
+1611,100191400.png,fliph_rcont_rcrop,train,Vollguss/Pickelloch geschlossen
+2389,100096900.png,fliph_raff_rcont,train,"Vollguss/Handgriff geschlossen, verschraubt"
+5606,100215100.png,blur_raff_rot,train,Vollguss/Aufklappbar
+5660,100129700.png,blur_raff_rshrp,train,Vollguss/Aufklappbar
+822,100073300.png,fliph_jit_raff,train,Vollguss/Handgriff geschlossen
+10,100167300.png,rcrop_rot_rshrp,train,Rost/Strassenrost
+2689,100081100.png,flipv_rcont_rinv,train,Gussbeton/Pickelloch geschlossen
+26,100169400.png,pers_rcrop_rinv,train,Rost/Strassenrost
+2544,100017100.png,fliph_flipv_orig,train,Gussbeton/Pickelloch geschlossen
+5573,100160800.png,blur_flipv_orig,train,Vollguss/Aufklappbar
+4564,100112000.png,flipv_rcrop_rot,train,Gussbeton/Handgriff seitlich
+560,100043200.png,flipv_orig_rshrp,train,Vollguss/Handgriff geschlossen
+5391,100100000.png,flipv_raff_rshrp,train,Rost/Strassenrost gewoelbt
+5635,100215100.png,pers_rcrop_rinv,train,Vollguss/Aufklappbar
+1443,100120400.png,blur_fliph_rot,train,Gussbeton/Pickelloch belueftet
+4099,100027600.png,blur_jit_raff,train,Rost/Einlauf rund
+5104,100025700.png,flipv_raff_rshrp,train,Rost/Strassenrost gewoelbt
+723,100033100.png,rcont_rcrop_rinv,train,Vollguss/Handgriff geschlossen
+6131,100005700.png,pers_rcrop_rot,train,Andere/-
+845,100114000.png,flipv_rinv_rot,train,Vollguss/Handgriff geschlossen
+558,100190000.png,blur_flipv_rcrop,train,Vollguss/Handgriff geschlossen
+4961,100211200.png,fliph_orig_pers,train,Rost/Strassenrost gewoelbt
+1190,100168500.png,blur_pers_rot,train,Gussbeton/Pickelloch belueftet
+40,100204400.png,0,val,Gussbeton/Pickelloch belueftet
+1932,100169800.png,fliph_jit_rot,train,Vollguss/Pickelloch geschlossen
+2525,100210200.png,jit_orig_rinv,train,Gussbeton/Pickelloch geschlossen
+5614,100215100.png,blur_flipv_rcont,train,Vollguss/Aufklappbar
+2793,100110100.png,raff_rcont_rinv,train,Gussbeton/Pickelloch geschlossen
+3860,100014900.png,blur_raff_rshrp,train,Vollguss/Pickelloch belueftet
+5604,100215100.png,blur_pers_rcont,train,Vollguss/Aufklappbar
+1329,100159900.png,0,test,Vollguss/Pickelloch geschlossen
+4420,100102900.png,fliph_flipv_orig,train,Rost/Einlauf rund
+4540,100076600.png,orig_raff_rot,train,Gussbeton/Handgriff seitlich
+1186,100020400.png,flipv_rcont_rot,train,Gussbeton/Pickelloch belueftet
+2745,100084900.png,orig_rcont_rinv,train,Gussbeton/Pickelloch geschlossen
+5194,100044500.png,flipv_pers_rcont,train,Rost/Strassenrost gewoelbt
+2962,100205400.png,jit_rcont_rcrop,train,Gussbeton/Pickelloch geschlossen
+4286,100141100.png,pers_rcont_rshrp,train,Rost/Einlauf rund
+1825,100217000.png,pers_rcont_rshrp,train,Vollguss/Pickelloch geschlossen
+5656,100129700.png,raff_rot_rshrp,train,Vollguss/Aufklappbar
+2484,100035800.png,jit_pers_rinv,train,Gussbeton/Pickelloch geschlossen
+5925,100035300.png,pers_raff_rshrp,train,Andere/-
+2653,100177700.png,pers_rcont_rcrop,train,Gussbeton/Pickelloch geschlossen
+2638,100089400.png,fliph_orig_rinv,train,Gussbeton/Pickelloch geschlossen
+128,100146300.png,rcont_rcrop_rot,train,Rost/Strassenrost
+410,100040900.png,0,test,Rost/Einlauf rund
+1253,100197300.png,blur_raff_rcrop,train,Gussbeton/Pickelloch belueftet
+1712,100106000.png,orig_raff_rcont,train,Vollguss/Pickelloch geschlossen
+1343,100043900.png,orig_rcont_rinv,train,Gussbeton/Pickelloch belueftet
+4644,100082500.png,blur_pers_rcont,train,Gussbeton/Handgriff seitlich
+5456,100149600.png,fliph_flipv_pers,train,Vollguss/Aufklappbar
+1324,100216900.png,fliph_orig_rot,train,Gussbeton/Pickelloch belueftet
+3990,100056700.png,orig_rcont_rot,train,Rost/Einlauf rund
+5338,100045500.png,fliph_rinv_rot,train,Rost/Strassenrost gewoelbt
+4535,100076600.png,blur_rcrop_rot,train,Gussbeton/Handgriff seitlich
+6019,100107800.png,jit_pers_rcrop,train,Andere/-
+4717,100083300.png,orig_raff_rot,train,Gussbeton/Handgriff seitlich
+5278,100009000.png,fliph_pers_rcont,train,Rost/Strassenrost gewoelbt
+4962,100211200.png,rcrop_rinv_rot,train,Rost/Strassenrost gewoelbt
+4165,100180100.png,flipv_raff_rot,train,Rost/Einlauf rund
+3870,100040800.png,flipv_pers_rcont,train,Vollguss/Pickelloch belueftet
+3632,100163100.png,jit_rcont_rot,train,Vollguss/Pickelloch belueftet
+5111,100025700.png,jit_raff_rshrp,train,Rost/Strassenrost gewoelbt
+2038,100080000.png,orig_rcont_rcrop,train,"Vollguss/Handgriff geschlossen, verschraubt"
+4899,100014700.png,raff_rcont_rshrp,train,Gussbeton/Handgriff seitlich
+5405,100206100.png,orig_pers_rot,train,Vollguss/Aufklappbar
+400,100031500.png,rcrop_rot_rshrp,train,Rost/Strassenrost
+5050,100012300.png,raff_rinv_rshrp,train,Rost/Strassenrost gewoelbt
+4125,100120800.png,fliph_flipv_jit,train,Rost/Einlauf rund
+896,100110000.png,blur_raff_rcrop,train,Vollguss/Handgriff geschlossen
+1501,100156100.png,raff_rinv_rot,train,Vollguss/Pickelloch geschlossen
+4724,100153100.png,blur_orig_rot,train,Gussbeton/Handgriff seitlich
+302,100169500.png,jit_rcont_rot,train,Rost/Strassenrost
+645,100013300.png,flipv_raff_rcrop,train,Vollguss/Handgriff geschlossen
+1135,100125000.png,flipv_raff_rshrp,train,Gussbeton/Pickelloch belueftet
+1290,100175200.png,blur_raff_rcont,train,Gussbeton/Pickelloch belueftet
+4093,100197200.png,orig_rinv_rshrp,train,Rost/Einlauf rund
+3711,100210500.png,fliph_flipv_rot,train,Vollguss/Pickelloch belueftet
+2928,100192700.png,fliph_raff_rcont,train,Gussbeton/Pickelloch geschlossen
+1448,100041600.png,orig_raff_rot,train,Gussbeton/Pickelloch belueftet
+3477,100022500.png,flipv_jit_rot,train,Vollguss/Pickelloch belueftet
+6173,100095200.png,jit_orig_rcrop,train,Andere/-
+5709,100059700.png,fliph_jit_orig,train,Vollguss/Aufklappbar
+1286,100169900.png,jit_raff_rinv,train,Gussbeton/Pickelloch belueftet
+3267,100019000.png,fliph_orig_raff,train,Gussbeton/Handgriff mitte
+5097,100025700.png,rcrop_rinv_rot,train,Rost/Strassenrost gewoelbt
+2023,100135700.png,rcont_rcrop_rinv,train,"Vollguss/Handgriff geschlossen, verschraubt"
+2077,100161500.png,blur_rinv_rot,train,"Vollguss/Handgriff geschlossen, verschraubt"
+1928,100006200.png,orig_pers_rot,train,Vollguss/Pickelloch geschlossen
+3175,100058500.png,orig_rcrop_rshrp,train,Gussbeton/Handgriff mitte
+4906,100014700.png,blur_flipv_jit,train,Gussbeton/Handgriff seitlich
+1227,100170200.png,blur_jit_rcrop,train,Gussbeton/Pickelloch belueftet
+3843,100101600.png,flipv_pers_rcrop,train,Vollguss/Pickelloch belueftet
+433,100067300.png,jit_orig_rcrop,train,Rost/Strassenrost
+748,100100700.png,flipv_rcont_rcrop,train,Vollguss/Handgriff geschlossen
+5964,100038400.png,fliph_flipv_rshrp,train,Andere/-
+4,100058200.png,blur_fliph_rcont,train,Rost/Strassenrost
+879,100133000.png,0,val,Rost/Strassenrost
+3137,100175800.png,fliph_jit_rshrp,train,Gussbeton/Handgriff mitte
+4568,100112000.png,blur_jit_orig,train,Gussbeton/Handgriff seitlich
+2582,100164700.png,fliph_flipv_pers,train,Gussbeton/Pickelloch geschlossen
+4252,100037800.png,rcont_rcrop_rinv,train,Rost/Einlauf rund
+881,100056000.png,flipv_jit_raff,train,Vollguss/Handgriff geschlossen
+5940,100206600.png,jit_pers_rot,train,Andere/-
+2146,100023800.png,flipv_orig_pers,train,"Vollguss/Handgriff geschlossen, verschraubt"
+5118,100099300.png,blur_orig_rshrp,train,Rost/Strassenrost gewoelbt
+1971,100073200.png,flipv_jit_orig,train,Vollguss/Pickelloch geschlossen
+1236,100191100.png,fliph_rinv_rshrp,train,Gussbeton/Pickelloch belueftet
+5805,100112700.png,blur_jit_raff,train,Vollguss/Aufklappbar
+4967,100211200.png,pers_raff_rot,train,Rost/Strassenrost gewoelbt
+669,100008000.png,0,test,Rost/Einlauf rund
+1075,100167200.png,flipv_rcont_rinv,train,Gussbeton/Pickelloch belueftet
+4606,100014200.png,blur_orig_raff,train,Gussbeton/Handgriff seitlich
+2505,100090600.png,flipv_rcrop_rshrp,train,Gussbeton/Pickelloch geschlossen
+4032,100099700.png,blur_jit_rcont,train,Rost/Einlauf rund
+1271,100037100.png,pers_rcont_rot,train,Gussbeton/Pickelloch belueftet
+2789,100049700.png,pers_raff_rot,train,Gussbeton/Pickelloch geschlossen
+435,100157200.png,orig_pers_rinv,train,Rost/Strassenrost
+505,100033000.png,0,test,Vollguss/Pickelloch geschlossen
+1202,100121400.png,flipv_raff_rinv,train,Gussbeton/Pickelloch belueftet
+1284,100063900.png,fliph_orig_rinv,train,Gussbeton/Pickelloch belueftet
+4500,100051800.png,jit_raff_rot,train,Gussbeton/Handgriff seitlich
+5711,100059700.png,flipv_rot_rshrp,train,Vollguss/Aufklappbar
+387,100090300.png,blur_pers_rinv,train,Rost/Strassenrost
+212,100152900.png,flipv_jit_rot,train,Rost/Strassenrost
+5192,100044500.png,fliph_jit_rcont,train,Rost/Strassenrost gewoelbt
+5470,100149600.png,blur_orig_raff,train,Vollguss/Aufklappbar
+5798,100112700.png,blur_jit_orig,train,Vollguss/Aufklappbar
+5852,100018900.png,fliph_pers_rshrp,train,Andere/-
+231,100043600.png,blur_fliph_rcrop,train,Rost/Strassenrost
+3580,100092100.png,rcrop_rinv_rshrp,train,Vollguss/Pickelloch belueftet
+4307,100107100.png,fliph_rcrop_rshrp,train,Rost/Einlauf rund
+5347,100118800.png,fliph_rcont_rshrp,train,Rost/Strassenrost gewoelbt
+3527,100181700.png,rcont_rcrop_rinv,train,Vollguss/Pickelloch belueftet
+2759,100045900.png,flipv_raff_rinv,train,Gussbeton/Pickelloch geschlossen
+4427,100011500.png,flipv_orig_rinv,train,Rost/Einlauf rund
+4621,100186700.png,pers_rinv_rot,train,Gussbeton/Handgriff seitlich
+3606,100101900.png,blur_flipv_rshrp,train,Vollguss/Pickelloch belueftet
+318,100147600.png,0,test,"Vollguss/Handgriff geschlossen, verschraubt"
+991,100045300.png,fliph_rcont_rot,train,Vollguss/Handgriff geschlossen
+3299,100091700.png,fliph_flipv_raff,train,Gussbeton/Handgriff mitte
+2430,100167800.png,blur_orig_rcont,train,"Vollguss/Handgriff geschlossen, verschraubt"
+3192,100207900.png,blur_orig_raff,train,Gussbeton/Handgriff mitte
+5727,100059700.png,blur_rcrop_rshrp,train,Vollguss/Aufklappbar
+955,100010500.png,blur_raff_rinv,train,Vollguss/Handgriff geschlossen
+1312,100013200.png,0,test,Vollguss/Handgriff geschlossen
+1293,100175200.png,orig_raff_rshrp,train,Gussbeton/Pickelloch belueftet
+896,100112100.png,0,val,Rost/Strassenrost
+2555,100183300.png,jit_rcont_rcrop,train,Gussbeton/Pickelloch geschlossen
+4027,100110900.png,fliph_orig_rshrp,train,Rost/Einlauf rund
+2601,100052600.png,flipv_rcrop_rinv,train,Gussbeton/Pickelloch geschlossen
+3205,100068500.png,blur_fliph_flipv,train,Gussbeton/Handgriff mitte
+4229,100107400.png,blur_rcrop_rot,train,Rost/Einlauf rund
+1374,100081700.png,jit_pers_rcrop,train,Gussbeton/Pickelloch belueftet
+6020,100040200.png,jit_pers_rot,train,Andere/-
+789,100120900.png,fliph_pers_rinv,train,Vollguss/Handgriff geschlossen
+2224,100056200.png,flipv_jit_rcrop,train,"Vollguss/Handgriff geschlossen, verschraubt"
+1756,100017300.png,jit_pers_raff,train,Vollguss/Pickelloch geschlossen
+1086,100184100.png,flipv_jit_rcont,train,Gussbeton/Pickelloch belueftet
+193,100089900.png,jit_rcrop_rshrp,train,Rost/Strassenrost
+2368,100171300.png,blur_jit_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+4855,100202900.png,jit_raff_rot,train,Gussbeton/Handgriff seitlich
+3465,100072700.png,fliph_orig_rot,train,Vollguss/Pickelloch belueftet
+4536,100076600.png,blur_fliph_flipv,train,Gussbeton/Handgriff seitlich
+3652,100160000.png,fliph_orig_raff,train,Vollguss/Pickelloch belueftet
+1357,100007700.png,jit_rot_rshrp,train,Gussbeton/Pickelloch belueftet
+4104,100155100.png,pers_raff_rshrp,train,Rost/Einlauf rund
+4082,100166800.png,raff_rcont_rot,train,Rost/Einlauf rund
+6324,100105900.png,jit_orig_rcrop,train,Andere/-
+28,100205800.png,fliph_raff_rcont,train,Rost/Strassenrost
+43,100042500.png,blur_orig_rot,train,Rost/Strassenrost
+733,100001700.png,blur_rcrop_rot,train,Vollguss/Handgriff geschlossen
+3745,100049800.png,blur_rinv_rot,train,Vollguss/Pickelloch belueftet
+3157,100058500.png,raff_rcont_rshrp,train,Gussbeton/Handgriff mitte
+4774,100137200.png,jit_rinv_rot,train,Gussbeton/Handgriff seitlich
+5318,100045500.png,blur_orig_rcrop,train,Rost/Strassenrost gewoelbt
+4300,100166100.png,flipv_pers_rcrop,train,Rost/Einlauf rund
+356,100149800.png,0,test,Andere/-
+260,100200700.png,fliph_flipv_jit,train,Rost/Strassenrost
+5240,100198400.png,fliph_pers_raff,train,Rost/Strassenrost gewoelbt
+8,100030000.png,jit_pers_rcont,train,Rost/Strassenrost
+1032,100214900.png,jit_rcrop_rshrp,train,Gussbeton/Pickelloch belueftet
+4174,100069000.png,blur_raff_rcrop,train,Rost/Einlauf rund
+649,100029200.png,blur_flipv_pers,train,Vollguss/Handgriff geschlossen
+1933,100094200.png,blur_jit_rcont,train,Vollguss/Pickelloch geschlossen
+1373,100101700.png,fliph_flipv_orig,train,Gussbeton/Pickelloch belueftet
+990,100115900.png,blur_flipv_jit,train,Vollguss/Handgriff geschlossen
+3326,100133500.png,blur_pers_rcrop,train,Gussbeton/Handgriff mitte
+2533,100104900.png,raff_rot_rshrp,train,Gussbeton/Pickelloch geschlossen
+4018,100076900.png,raff_rcont_rshrp,train,Rost/Einlauf rund
+5369,100118800.png,flipv_orig_rshrp,train,Rost/Strassenrost gewoelbt
+4216,100016200.png,blur_flipv_pers,train,Rost/Einlauf rund
+5310,100170300.png,flipv_pers_rot,train,Rost/Strassenrost gewoelbt
+104,100210400.png,flipv_pers_raff,train,Rost/Strassenrost
+4821,100033900.png,blur_orig_pers,train,Gussbeton/Handgriff seitlich
+954,100150500.png,pers_rot_rshrp,train,Vollguss/Handgriff geschlossen
+6118,100021700.png,fliph_flipv_rinv,train,Andere/-
+848,100078200.png,rinv_rot_rshrp,train,Vollguss/Handgriff geschlossen
+4910,100181500.png,blur_rcrop_rinv,train,Gussbeton/Handgriff seitlich
+3231,100032300.png,raff_rcrop_rshrp,train,Gussbeton/Handgriff mitte
+556,100122500.png,jit_orig_rcont,train,Vollguss/Handgriff geschlossen
+5712,100059700.png,jit_rcont_rcrop,train,Vollguss/Aufklappbar
+1013,100022300.png,jit_orig_rcrop,train,Gussbeton/Pickelloch belueftet
+1109,100142700.png,0,val,Rost/Strassenrost
+3797,100138000.png,pers_rot_rshrp,train,Vollguss/Pickelloch belueftet
+2519,100199400.png,blur_fliph_rinv,train,Gussbeton/Pickelloch geschlossen
+3653,100160000.png,flipv_orig_rcrop,train,Vollguss/Pickelloch belueftet
+2860,100046400.png,flipv_rinv_rshrp,train,Gussbeton/Pickelloch geschlossen
+3064,100170000.png,blur_fliph_jit,train,Gussbeton/Handgriff mitte
+412,100020800.png,blur_flipv_raff,train,Rost/Strassenrost
+4134,100144700.png,blur_rcont_rcrop,train,Rost/Einlauf rund
+156,100024500.png,pers_rcont_rshrp,train,Rost/Strassenrost
+5083,100025700.png,orig_pers_raff,train,Rost/Strassenrost gewoelbt
+787,100112300.png,blur_jit_rshrp,train,Vollguss/Handgriff geschlossen
+3596,100089000.png,blur_pers_rcrop,train,Vollguss/Pickelloch belueftet
+3862,100151300.png,blur_flipv_raff,train,Vollguss/Pickelloch belueftet
+4790,100085000.png,flipv_raff_rot,train,Gussbeton/Handgriff seitlich
+3340,100108400.png,fliph_flipv_rinv,train,Gussbeton/Handgriff mitte
+3595,100089000.png,jit_raff_rcont,train,Vollguss/Pickelloch belueftet
+4337,100204100.png,fliph_pers_rshrp,train,Rost/Einlauf rund
+1995,100203400.png,rcont_rcrop_rinv,train,"Vollguss/Handgriff geschlossen, verschraubt"
+5202,100045200.png,flipv_rinv_rot,train,Rost/Strassenrost gewoelbt
+3741,100107300.png,raff_rcrop_rshrp,train,Vollguss/Pickelloch belueftet
+5505,100144000.png,flipv_pers_rcont,train,Vollguss/Aufklappbar
+4235,100032800.png,blur_rcont_rcrop,train,Rost/Einlauf rund
+1191,100168500.png,fliph_orig_rcont,train,Gussbeton/Pickelloch belueftet
+5823,100112700.png,rcrop_rot_rshrp,train,Vollguss/Aufklappbar
+2989,100147900.png,jit_pers_rot,train,Gussbeton/Handgriff mitte
+1242,100065100.png,pers_rcont_rinv,train,Gussbeton/Pickelloch belueftet
+5644,100129700.png,rcrop_rot_rshrp,train,Vollguss/Aufklappbar
+1260,100178600.png,0,val,Vollguss/Pickelloch geschlossen
+2058,100130400.png,jit_rot_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+3892,100202800.png,flipv_orig_pers,train,Vollguss/Pickelloch belueftet
+4488,100117900.png,fliph_orig_rcont,train,Gussbeton/Handgriff seitlich
+821,100073300.png,flipv_rcont_rinv,train,Vollguss/Handgriff geschlossen
+4534,100076600.png,fliph_jit_rinv,train,Gussbeton/Handgriff seitlich
+270,100196700.png,flipv_pers_rot,train,Rost/Strassenrost
+1053,100093800.png,fliph_flipv_rot,train,Gussbeton/Pickelloch belueftet
+153,100014100.png,blur_fliph_pers,train,Rost/Strassenrost
+1175,100076400.png,raff_rot_rshrp,train,Gussbeton/Pickelloch belueftet
+110,100135000.png,0,test,"Vollguss/Handgriff geschlossen, verschraubt"
+5476,100149600.png,rcont_rinv_rshrp,train,Vollguss/Aufklappbar
+3176,100058500.png,rcont_rcrop_rshrp,train,Gussbeton/Handgriff mitte
+604,100049600.png,0,val,Vollguss/Handgriff geschlossen
+5949,100186100.png,fliph_flipv_pers,train,Andere/-
+1290,100212300.png,0,val,Rost/Strassenrost
+5785,100112700.png,pers_rcont_rot,train,Vollguss/Aufklappbar
+4418,100102900.png,rinv_rot_rshrp,train,Rost/Einlauf rund
+1361,100072800.png,raff_rinv_rot,train,Gussbeton/Pickelloch belueftet
+4834,100033900.png,pers_rcont_rshrp,train,Gussbeton/Handgriff seitlich
+1091,100177300.png,blur_jit_pers,train,Gussbeton/Pickelloch belueftet
+3183,100207900.png,blur_raff_rshrp,train,Gussbeton/Handgriff mitte
+1515,100214300.png,pers_rinv_rshrp,train,Vollguss/Pickelloch geschlossen
+319,100078700.png,pers_raff_rshrp,train,Rost/Strassenrost
+6276,100131600.png,fliph_jit_rot,train,Andere/-
+677,100076200.png,fliph_rinv_rot,train,Vollguss/Handgriff geschlossen
+2830,100092500.png,blur_rot_rshrp,train,Gussbeton/Pickelloch geschlossen
+2163,100070600.png,rcont_rot_rshrp,train,"Vollguss/Handgriff geschlossen, verschraubt"
+2852,100119900.png,jit_pers_rshrp,train,Gussbeton/Pickelloch geschlossen
+4299,100000000.png,flipv_orig_rinv,train,Rost/Einlauf rund
+5167,100109000.png,fliph_rcrop_rinv,train,Rost/Strassenrost gewoelbt
+475,100097000.png,raff_rcont_rot,train,Rost/Strassenrost
+1926,100213600.png,flipv_orig_pers,train,Vollguss/Pickelloch geschlossen
+3274,100074500.png,flipv_orig_rcrop,train,Gussbeton/Handgriff mitte
+1571,100059400.png,pers_raff_rshrp,train,Vollguss/Pickelloch geschlossen
+6012,100027700.png,raff_rot_rshrp,train,Andere/-
+5636,100215100.png,fliph_rinv_rot,train,Vollguss/Aufklappbar
+4779,100085000.png,blur_flipv_orig,train,Gussbeton/Handgriff seitlich
+4030,100099700.png,flipv_jit_rshrp,train,Rost/Einlauf rund
+3084,100097600.png,fliph_jit_rshrp,train,Gussbeton/Handgriff mitte
+70,100085500.png,fliph_rinv_rshrp,train,Rost/Strassenrost
+3891,100202800.png,fliph_rcont_rinv,train,Vollguss/Pickelloch belueftet
+6083,100026500.png,orig_pers_rcont,train,Andere/-
+716,100075400.png,jit_rcont_rcrop,train,Vollguss/Handgriff geschlossen
+4304,100166100.png,flipv_jit_raff,train,Rost/Einlauf rund
+338,100127900.png,flipv_orig_rcont,train,Rost/Strassenrost
+1486,100218000.png,fliph_pers_rshrp,train,Gussbeton/Pickelloch belueftet
+741,100086500.png,jit_pers_rcrop,train,Vollguss/Handgriff geschlossen
+3376,100153800.png,orig_pers_rot,train,Gussbeton/Handgriff mitte
+430,100199700.png,rcrop_rot_rshrp,train,Rost/Strassenrost
+5965,100038400.png,blur_orig_raff,train,Andere/-
+1768,100012000.png,orig_raff_rinv,train,Vollguss/Pickelloch geschlossen
+3029,100199600.png,jit_orig_rshrp,train,Gussbeton/Handgriff mitte
+553,100128600.png,orig_pers_rcrop,train,Vollguss/Handgriff geschlossen
+1875,100203700.png,pers_raff_rcont,train,Vollguss/Pickelloch geschlossen
+1925,100213600.png,raff_rcont_rcrop,train,Vollguss/Pickelloch geschlossen
+1306,100053200.png,blur_rcont_rcrop,train,Gussbeton/Pickelloch belueftet
+5388,100100000.png,blur_flipv_rinv,train,Rost/Strassenrost gewoelbt
+6156,100143700.png,fliph_pers_raff,train,Andere/-
+5795,100112700.png,fliph_jit_rcont,train,Vollguss/Aufklappbar
+593,100133100.png,fliph_orig_raff,train,Vollguss/Handgriff geschlossen
+4884,100085600.png,rcrop_rinv_rot,train,Gussbeton/Handgriff seitlich
+6074,100124600.png,fliph_flipv_rshrp,train,Andere/-
+2225,100044200.png,flipv_orig_rinv,train,"Vollguss/Handgriff geschlossen, verschraubt"
+1171,100157600.png,0,test,Rost/Strassenrost
+2627,100102100.png,blur_flipv_rshrp,train,Gussbeton/Pickelloch geschlossen
+5722,100059700.png,fliph_jit_rcont,train,Vollguss/Aufklappbar
+5211,100045200.png,fliph_orig_rinv,train,Rost/Strassenrost gewoelbt
+5306,100170300.png,orig_pers_rcont,train,Rost/Strassenrost gewoelbt
+4953,100006600.png,flipv_pers_rcrop,train,Rost/Strassenrost gewoelbt
+0,100161900.png,0,test,Rost/Strassenrost
+1150,100178000.png,blur_fliph_raff,train,Gussbeton/Pickelloch belueftet
+2889,100000100.png,blur_jit_rot,train,Gussbeton/Pickelloch geschlossen
+2191,100059500.png,blur_jit_raff,train,"Vollguss/Handgriff geschlossen, verschraubt"
+184,100012500.png,pers_rcrop_rot,train,Rost/Strassenrost
+1310,100155700.png,jit_orig_rcont,train,Gussbeton/Pickelloch belueftet
+3825,100176900.png,rcont_rinv_rot,train,Vollguss/Pickelloch belueftet
