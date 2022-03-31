@@ -1,8 +1,9 @@
 # Location Params
-FROM_FOLDER: '../../data/images_transformed/'
-TO_FOLDER: '../../data/prepared_images/'
+FROM_FOLDER: '../../data/train/'
+TO_FOLDER: '../../data/intermediate1/'
 DF_PATH: '../../data/transformation_split.csv'
 
+IS_OS_WINDOWS: False
 # Transformation Params
 ## Current IMage size
 IMAGE_SIZE: 500 
@@ -16,5 +17,8 @@ RANDOM_REPLACE: False
 RANDOM_REUSE_TRANSFORM: False
 
 # Multiprocessing parmas
+GIVEN_KEY: False
 N_PROCESSES: 5
+
+# Set test Parameter
 TEST_ONLY: False
