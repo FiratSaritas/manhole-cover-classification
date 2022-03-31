@@ -10,7 +10,7 @@ This file shows all data when it was labelled.
 - `subtype`: Labelled subtype of the image
 
 
-### `transformation_split.csv`
+### `trans_labels.csv`
 
 This is a pre-processed dataframe which originates from `labels.csv`. This file is used for the Train-Validation-Test Splits of the data plus the offline data augmentation steps.
 
