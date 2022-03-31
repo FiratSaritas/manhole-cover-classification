@@ -1,17 +1,12 @@
 """
 This script is for offline Augmentation purposes. It depends on the parameters withing augment_config.yaml
 
-Due to system dependencies workarounds have been implemented loading if sys.plattform is windows conf in 
-not in __main__ scope.
-
 When calling this File:
 - It will create a new folder given as parameter TO_FOLDER
 - Make a transformed copy of all images from 'FROM_FOLDEr' to 'TO_FOLDER'
 - Create a new dataframe with the new filenames which is adaption of the given dataframe 'DF_PATH_FROM'
-
 """
 import os
-import sys
 import time
 import yaml
 import PIL.Image
@@ -25,11 +20,10 @@ from torchvision import transforms as transforms
 
 
 # Load configs
-if 'win' in sys.platform:
-    print('Using Windows - Change Workflow')
-    with open('augment_config.yaml', 'r') as yaml_file:
-        conf = yaml.load(yaml_file, yaml.FullLoader)
-    
+with open('augment_config.yaml', 'r') as yaml_file:
+    conf = yaml.load(yaml_file, yaml.FullLoader)
+
+if conf['IS_OS_WINDOWS']:
     # Read dataframe with all transform steps 
     df_from = pd.read_csv(conf['DF_PATH'])
     
@@ -157,28 +151,25 @@ def _transform_image(mp_iterable: tuple):
         # Applies Transformations given a Transformation key
         if mp_iterable[2] != '0':
             image = random_augmenter.transform_given_key(image, mp_iterable[2].split('_'))
-        image = post_transforms(image)
-        image.save(mp_iterable[1])  
-        
-        
+        image = pre_transforms(image)
+        image.save(mp_iterable[1])   
 
-if 'win' in sys.platform:
+
+if conf['IS_OS_WINDOWS']:
     # Initiate Transformation Classes
     pre_transforms = transforms.Compose([transforms.CenterCrop(conf['IMAGE_SIZE']-conf['REDUCE_PIXEL_CROP']),
+                                         transforms.Resize(conf['RESIZE']), 
                                          transforms.Grayscale(num_output_channels=3)])
     random_augmenter = RandomAugmentor(apply_n=conf['RANDOM_APPLY_N'],
                                        reuse_transform=conf['RANDOM_REUSE_TRANSFORM'],
                                        replace_sample=conf['RANDOM_REPLACE'], 
-                                       image_size=conf['IMAGE_SIZE']-conf['REDUCE_PIXEL_CROP'])
+                                       image_size=conf['RESIZE'])
     post_transforms = transforms.Compose([transforms.Resize(conf['RESIZE'])])
 
 
 if __name__ == '__main__':  
 
     # Load Configs
-    with open('augment_config.yaml', 'r') as yaml_file:
-        conf = yaml.load(yaml_file, yaml.FullLoader)
-    
     print('Configurations:\n' , conf)
 
     # Read dataframe with all transform steps 
@@ -192,10 +183,10 @@ if __name__ == '__main__':
     
     # Build Iterable
     if conf['GIVEN_KEY']:
-        tmp = list(df_from[['image', 'transforms']].to_records(index=False))
+        tmp = list(df_from[['image', 'transforms', 'filename']].to_records(index=False))
         from_ = [os.path.join(conf['FROM_FOLDER'], fname[0]) for fname in tmp]
         transforms_ = [trans[1] for trans in tmp]
-        to_ = [os.path.join(conf['TO_FOLDER'], fname[0].split('.')[0] + '_' + fname[1] + '.png') for fname in tmp]
+        to_ = [os.path.join(conf['TO_FOLDER'], fname[2]) for fname in tmp]
         mp_iterable = list(zip(from_, to_, transforms_))
     else:
         from_ = os.listdir(conf['FROM_FOLDER'])
@@ -213,11 +204,12 @@ if __name__ == '__main__':
         
         # Initiate Transformation Classes
         pre_transforms = transforms.Compose([transforms.CenterCrop(conf['IMAGE_SIZE']-conf['REDUCE_PIXEL_CROP']),
+                                             transforms.Resize(conf['RESIZE']), 
                                              transforms.Grayscale(num_output_channels=3)])
         random_augmenter = RandomAugmentor(apply_n=conf['RANDOM_APPLY_N'],
                                            reuse_transform=conf['RANDOM_REUSE_TRANSFORM'],
                                            replace_sample=conf['RANDOM_REPLACE'], 
-                                           image_size=conf['IMAGE_SIZE']-conf['REDUCE_PIXEL_CROP'])
+                                           image_size=conf['RESIZE'])
         post_transforms = transforms.Compose([transforms.Resize(conf['RESIZE'])])
         
         
