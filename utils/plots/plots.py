@@ -32,13 +32,13 @@ class EvaluationPlots:
     @classmethod
     def plot_confusion_matrix(self, y_true: np.ndarray, y_pred: np.ndarray, class_labels: dict):
                
-        plt.subplots(figsize=(14, 8))
+        plt.subplots(figsize=(10, 8))
         p = sns.heatmap(confusion_matrix(y_true=y_true, y_pred=y_pred), cmap='Blues',
                         xticklabels=class_labels.values(), yticklabels=class_labels.values(), 
                         square=True, annot=True, fmt="d")
 
         p.set_title('Confusion Matrix', loc='left')
-        p.set_xlabel('Predicted')
+        p.set_xlabel('Predicted', rotation=20, ha='right')
         p.set_ylabel('True')
 
         plt.show()
