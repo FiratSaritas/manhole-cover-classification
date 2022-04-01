@@ -2,6 +2,7 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 import pandas as pd
 import numpy as np
+from torchvision import transforms as transforms
 from sklearn.metrics import confusion_matrix
 from torchvision.transforms.functional import to_pil_image
 
