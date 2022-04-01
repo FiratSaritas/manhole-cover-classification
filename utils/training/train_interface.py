@@ -58,28 +58,21 @@ class TrainingInterface(object):
             return '{}\n{}\n{}'.format(50 * '=', pytorch_total_params, 50 * '=')
         
     def train(self, criterion, optimizer, n_epochs, dataloader_train, 
-                      dataloader_val=None, verbose=True):
+                      dataloader_val=None, epsilon=.0001, verbose=True):
         """
         Trains a neural Network with given inputs and parameters.
 
         params:
-        ---------
+        -----------------
         model:                Neural Network class Pytorch     
         criterion:            Cost-Function used for the network optimizatio
         optimizer:            Optmizer for the network
         n_epochs:             Defines how many times the whole dateset should be fed through the network
         dataloader_train:     Dataloader with the batched dataset
         dataloader_val:       Dataloader test with the batched dataset used for test loop. If None -> No eval loop
-        verbose               Prints Report after each Epoch
-
-        returns:
-        ----------
-        tuple(model, losses):
-            (resnetx, {'train': [3425, 12, 324], ...})
-            model:
-                trained model
-            losses:
-                Losses over each iteration  
+        epsilon:              Epsilon defines stop criterion regarding to convergence of loss
+        verbose:               Prints Report after each Epoch
+        
         """
         y_pred, y_true = torch.Tensor(), torch.Tensor()
         self.model.to(self.dev)
@@ -132,7 +125,12 @@ class TrainingInterface(object):
                 if verbose:
                     print('Epoch {}/{}: [Train-Loss = {}] || [Validation-Loss = {}]'.format(epoch+1, n_epochs, 
                                                                                          np.round(running_loss, 3),     
-                                                                                         np.round(val_loss, 3)))                   
+                                                                                         np.round(val_loss, 3)))     
+                if epoch > 0:
+                    if epsilon > np.abs(loss_before - running_loss):
+                        break
+                loss_before = running_loss
+                    
         return self
     
     def predict(self, dataloader):
