@@ -127,7 +127,7 @@ class TrainingInterface(object):
                                                                                          np.round(running_loss, 3),     
                                                                                          np.round(val_loss, 3)))     
                 if epoch > 0:
-                    if epsilon < np.abs(loss_before - running_loss):
+                    if epsilon > np.abs(loss_before - running_loss):
                         break
                 loss_before = running_loss
                     
