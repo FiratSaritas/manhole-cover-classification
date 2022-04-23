@@ -5,6 +5,7 @@ from sklearn.metrics import accuracy_score, precision_score
 from sklearn.model_selection import KFold
 import numpy as np
 from tqdm.notebook import tqdm
+import torch.nn.functional as F
 
 
 
@@ -147,21 +148,31 @@ class TrainingInterface(object):
         (y_true, y_pred): 
             y_true       True labels
             y_pred:      Predicted Labels
+            y_images:    Images
+            y_prob:      Predicted Probability
         """
         self.model.to(self.dev)
         self.model.eval()
+                
         with torch.no_grad():
-            y_pred, y_true = [], [] 
-            
+            y_pred, y_true, y_images, y_prob = [], [], [], [] 
             for batch in tqdm(dataloader, desc='Calculate Predictions'):
                 images, labels = batch
                 images, labels = images.to(self.dev), labels.to(self.dev)
-                outputs = self.model(images)
-                _, predicted = torch.max(outputs.data, 1)
-                y_pred = np.append(y_pred, predicted.cpu().numpy())
-                y_true = np.append(y_true, labels.cpu().numpy())
+                y_probs = F.softmax(self.model(images), dim = -1)
 
-        return (y_true, y_pred)
+                y_images.append(images.cpu())
+                y_true.append(labels.cpu())
+                y_prob.append(y_probs.cpu())
+
+        y_images = torch.cat(y_images, dim = 0)
+        y_true = torch.cat(y_true, dim = 0)
+        y_prob = torch.cat(y_prob, dim = 0)
+        y_pred = torch.argmax(y_prob, 1)        
+
+        
+
+        return (y_true, y_pred, y_prob, y_images)
     
     def calculate_metrics(self, dataloader_train: 'torch.Dataloader', 
                           dataloader_test: 'torch.Dataloader', metric_funcs: list, **metric_kwargs):
