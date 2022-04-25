@@ -134,7 +134,7 @@ class TrainingInterface(object):
                     
         return self
     
-    def predict(self, dataloader):
+    def predict(self, dataloader, return_images: bool = True, return_prob: bool = True):
         """
         Returns true and predicted labels for prediction
 
@@ -142,35 +142,40 @@ class TrainingInterface(object):
         ---------
         model:           Pytorch Neuronal Net
         dataloader:      batched Testset
+        return_images:   If true returns images
+        return_prob:     If true returns predicted probabilities
 
         returns:
         ----------
         (y_true, y_pred): 
             y_true       True labels
             y_pred:      Predicted Labels
-            y_images:    Images
-            y_prob:      Predicted Probability
+            y_images:    Images (empty if return_images = False)
+            y_prob:      Predicted Probability (empty if return_prob = False)
         """
         self.model.to(self.dev)
         self.model.eval()
-                
+        y_pred, y_true, y_images, y_prob = [], [], [], [] 
+        
         with torch.no_grad():
-            y_pred, y_true, y_images, y_prob = [], [], [], [] 
             for batch in tqdm(dataloader, desc='Calculate Predictions'):
                 images, labels = batch
                 images, labels = images.to(self.dev), labels.to(self.dev)
                 y_probs = F.softmax(self.model(images), dim = -1)
-
-                y_images.append(images.cpu())
+                
+                if return_images:
+                    y_images.append(images.cpu())
+                if return_prob:
+                    y_prob.append(y_probs.cpu()) 
                 y_true.append(labels.cpu())
-                y_prob.append(y_probs.cpu())
-
-        y_images = torch.cat(y_images, dim = 0)
+                
+        if return_images:
+            y_images = torch.cat(y_images, dim = 0)
+        if return_prob:
+            y_prob = torch.cat(y_prob, dim = 0)
+            
         y_true = torch.cat(y_true, dim = 0)
-        y_prob = torch.cat(y_prob, dim = 0)
         y_pred = torch.argmax(y_prob, 1)        
-
-        
 
         return (y_true, y_pred, y_prob, y_images)
     
