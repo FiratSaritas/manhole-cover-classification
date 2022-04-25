@@ -1,3 +1,4 @@
+import os
 import torch
 import torch.nn as nn
 from sklearn.metrics import confusion_matrix
@@ -10,30 +11,62 @@ import torch.nn.functional as F
 
 
 class TrainingInterface(object):
-    """This class implements a simple Sklearn like interface for training of Neural Network"""
+    """
+    This class implements a simple Sklearn like interface for training of Neural Network
+    """
     
-    def __init__(self, model, name):
+    def __init__(self, model, name, history: bool = False, history_folder: str = 'train_history'):
         """
         Training Interface Wrapper class for the training of neural network classifier
         in pytorch. Only applicable for image classification.
         
         Params:
         -------------------
-        model:                Neural Network class Pytorch     
-        name:                 Name of Neural Network
+        model: (torch.model)     Neural Network class Pytorch     
+        name: (str)              Name of Neural Network
+        history: (bool)          If true saves trained model in history to restore best epochs 
+                                 at end of training.
+        history_folder: (bool)   Folder where the train history is saved. 
         
-        dev:                  Device Cuda or cpu
-        train_losses:         Training losses recorded during training
-        eval_losses:          Validation Losses recorded during training
+        dev:                     Device Cuda or cpu
+        train_losses:            Training losses recorded during training
+        eval_losses:             Validation Losses recorded during training
         """
         self.model = model
-        self.name = name   
+        self.name = name
+        self.history = history
+        self.history_folder = history_folder + '_' + name
+        if self.history:
+            self._init_history()
         
         self.dev = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
         self.train_loss = []
         self.val_loss = []
         self.train_epoch_loss = []
         self.val_epoch_loss = []
+        
+    def _init_history(self):
+        if os.path.isdir(self.history_folder):
+            print(f'Found Existing History Folder. Removing all Files: {self.history_folder}')
+            all_files_in_hist = os.listdir(self.history_folder)
+            for file in all_files_in_hist:
+                os.remove(os.path.join(self.history_folder, file))
+        else:
+            print(f'No History Folder. Create History folder at: {self.history_folder}')
+            os.mkdir(self.history_folder)
+                
+    def load_from_history(self, epoch: int, inplace: bool = False):
+        """
+        Loads Network from history given the Epoch
+        """
+        assert self.history == True, 'No history'
+        model = torch.load(os.path.join(self.history_folder,  f'{self.name}_{epoch}'))
+        if inplace:
+            self.model = torch.load(os.path.join(self.history_folder,  f'{self.name}_{epoch}'))
+            print(f'Replaced self.model with model from epoch {epoch}')
+        else:
+            return model
+        
     
     def print_network(self):
         """
@@ -129,8 +162,13 @@ class TrainingInterface(object):
                                                                                          np.round(val_loss, 3)))     
                 if epoch > 0:
                     if epsilon > np.abs(loss_before - running_loss):
+                        print(20*'=', 'Network Converged', 20*'=')
                         break
                 loss_before = running_loss
+                
+                if self.history:
+                    torch.save(self.model, 
+                               os.path.join(self.history_folder,  f'{self.name}_{epoch+1}'))
                     
         return self
     
@@ -165,19 +203,20 @@ class TrainingInterface(object):
                 
                 if return_images:
                     y_images.append(images.cpu())
-                if return_prob:
-                    y_prob.append(y_probs.cpu()) 
+                y_prob.append(y_probs.cpu()) 
                 y_true.append(labels.cpu())
                 
         if return_images:
             y_images = torch.cat(y_images, dim = 0)
-        if return_prob:
-            y_prob = torch.cat(y_prob, dim = 0)
-            
+        
+        y_prob = torch.cat(y_prob, dim = 0)
         y_true = torch.cat(y_true, dim = 0)
         y_pred = torch.argmax(y_prob, 1)        
 
-        return (y_true, y_pred, y_prob, y_images)
+        return (y_true, 
+                y_pred, 
+                y_prob if return_prob else None, 
+                y_images if return_images else None)
     
     def calculate_metrics(self, dataloader_train: 'torch.Dataloader', 
                           dataloader_test: 'torch.Dataloader', metric_funcs: list, **metric_kwargs):
