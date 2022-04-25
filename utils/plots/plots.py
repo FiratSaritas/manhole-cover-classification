@@ -67,7 +67,7 @@ class EvaluationPlots:
         
     @classmethod
     def loss_sma(self, loss, sma=50, show_fig = True):
-        """plot loss with batch moving average
+        """plot loss with moving average
 
         Args:
             loss (_type_): _description_
@@ -76,6 +76,8 @@ class EvaluationPlots:
         """
         colors = sns.color_palette('Paired', 4)
         sns.set_style('white')
+        if not isinstance(loss, pd.Series):
+            loss = pd.Series(loss)
 
         mean_loss_folds = loss.rolling(sma).mean()
         std_loss_folds = loss.rolling(sma).std()
