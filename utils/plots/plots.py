@@ -19,29 +19,32 @@ class EvaluationPlots:
     """
     
     @classmethod
-    def plot_train_val_loss(self, train_loss, val_loss, **kwargs):
+    def plot_train_val_loss(self, train_loss = None, val_loss = None, **kwargs):
         """plot train and validation loss
 
         Args:
-            train_loss (_type_): _description_
-            val_loss (_type_): _description_
+            train_loss (list or array): list of loss values
+            val_loss (list or array): list of loss values
         """
 
         fig = plt.subplots(figsize=(14, 4))
-        plt.subplot(1,2,1)
-        p = sns.lineplot(x=np.arange(len(train_loss)), 
-                         y=train_loss, label='Batch Loss')
-        p.set_title('Training Loss', loc='left')
-        p.set_xlabel('Batches')
-        p.set_ylabel('Loss')
-        sns.despine()
-        
-        plt.subplot(1,2,2)
-        p = sns.lineplot(x=np.arange(len(val_loss)), y=val_loss)
-        p.set_title('Validation Loss', loc='left')
-        p.set_xlabel('Batches')
-        p.set_ylabel('Loss')
-        sns.despine()
+        if train_loss:
+            if val_loss:
+                plt.subplot(1,2,1)
+            p = sns.lineplot(x=np.arange(len(train_loss)), 
+                             y=train_loss, label='Batch Loss')
+            p.set_title('Training Loss', loc='left')
+            p.set_xlabel('Batches')
+            p.set_ylabel('Loss')
+            sns.despine()
+        if val_loss:
+            if train_loss:
+                plt.subplot(1,2,2)
+            p = sns.lineplot(x=np.arange(len(val_loss)), y=val_loss)
+            p.set_title('Validation Loss', loc='left')
+            p.set_xlabel('Batches')
+            p.set_ylabel('Loss')
+            sns.despine()
 
         plt.show()
         
@@ -60,14 +63,15 @@ class EvaluationPlots:
                         square=True, annot=True, fmt="d")
 
         p.set_title('Confusion Matrix', loc='left')
-        p.set_xlabel('Predicted', rotation=20, ha='right')
+        p.set_xticklabels(p.get_xticklabels(), rotation=20, ha='right')
+        p.set_xlabel('Predicted')
         p.set_ylabel('True')
 
         plt.show()
         
     @classmethod
     def loss_sma(self, loss, sma=50, show_fig = True):
-        """plot loss with batch moving average
+        """plot loss with moving average
 
         Args:
             loss (_type_): _description_
@@ -76,6 +80,8 @@ class EvaluationPlots:
         """
         colors = sns.color_palette('Paired', 4)
         sns.set_style('white')
+        if not isinstance(loss, pd.Series):
+            loss = pd.Series(loss)
 
         mean_loss_folds = loss.rolling(sma).mean()
         std_loss_folds = loss.rolling(sma).std()
