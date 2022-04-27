@@ -7,6 +7,7 @@ from sklearn.model_selection import KFold
 import numpy as np
 from tqdm.notebook import tqdm
 import torch.nn.functional as F
+import wandb
 
 
 class CheckPoint:
@@ -43,7 +44,7 @@ class TrainingInterface(CheckPoint):
     This class implements a simple Sklearn like interface for training of Neural Network
     """
     
-    def __init__(self, model, name, history: bool = False, history_folder: str = 'train_history'):
+    def __init__(self, model, name, history: bool = False, history_folder: str = 'train_history', writer: object = None):
         """
         Training Interface Wrapper class for the training of neural network classifier
         in pytorch. Only applicable for image classification.
@@ -55,6 +56,7 @@ class TrainingInterface(CheckPoint):
         history: (bool)          If true saves trained model in history to restore best epochs 
                                  at end of training.
         history_folder: (bool)   Folder where the train history is saved. 
+        writer: (object)         If true uses wandb to log all outputs during training and inference
         
         dev:                     Device Cuda or cpu
         train_losses:            Training losses recorded during training
@@ -65,6 +67,7 @@ class TrainingInterface(CheckPoint):
         self.name = name 
         if self.history:
             self._init_history()
+        self.writer = writer
         
         self.dev = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
         self.epoch = 0
@@ -139,12 +142,17 @@ class TrainingInterface(CheckPoint):
 
                     # calc and print stats
                     self.train_loss.append(loss.item())
+                    if self.writer != None:
+                        self.writer.log({'train_batch_loss': loss.item()})
+                        
                     running_loss += loss.item()                
                     pbar.set_description('Epoch: {}/{} // Running Loss: {} '.format(epoch+1, n_epochs, 
-                                                                                    np.round(running_loss, 3)))
+                                                                                    np.round(running_loss, 3)))   
                     pbar.update(1)
                 
                 self.train_epoch_loss.append(running_loss)
+                if self.writer != None:
+                    self.writer.log({'train_epoch_loss': running_loss})
 
                 if dataloader_val:
                     length_dataloader_val = len(dataloader_val)
@@ -160,10 +168,19 @@ class TrainingInterface(CheckPoint):
                             eval_loss = criterion(outputs, labels)
                             val_loss += eval_loss.item()
                             self.val_loss.append(eval_loss.item())
+                            if self.writer != None:
+                                self.writer.log({'val_batch_loss': eval_loss.item()})
                         self.model.train()  
                     self.val_epoch_loss.append(val_loss)
+                    
+                    if self.writer != None:
+                        self.writer.log({'val_epoch_loss': val_loss})
+                
+                # Update epoch
+                self.epoch += 1
+                
                 if verbose:
-                    print('Epoch {}/{}: [Train-Loss = {}] || [Validation-Loss = {}]'.format(epoch+1, n_epochs, 
+                    print('Epoch {}/{}: [Train-Loss = {}] || [Validation-Loss = {}]'.format(self.epoch, n_epochs, 
                                                                                          np.round(running_loss, 3),     
                                                                                          np.round(val_loss, 3)))     
                 if epoch > 0:
@@ -171,17 +188,15 @@ class TrainingInterface(CheckPoint):
                         print(20*'=', 'Network Converged', 20*'=')
                         break
                 loss_before = running_loss
-                
-                # Update epoch
-                self.epoch += 1
-                
+
                 if self.history:
                     torch.save(self.model, 
-                               os.path.join(self.history_folder,  f'{self.name}_{epoch+1}'))
+                               os.path.join(self.history_folder,  f'{self.name}_{self.epoch}'))
                     
         return self
     
-    def predict(self, dataloader, return_images: bool = True, return_prob: bool = True):
+    def predict(self, dataloader, return_images: bool = True, return_prob: bool = True, 
+                disable_pbar: bool = False):
         """
         Returns true and predicted labels for prediction
 
@@ -191,21 +206,22 @@ class TrainingInterface(CheckPoint):
         dataloader:      batched Testset
         return_images:   If true returns images
         return_prob:     If true returns predicted probabilities
+        disable_pbar:    If true disables pbar
 
         returns:
         ----------
-        (y_true, y_pred): 
+        (y_true, y_pred, y_images, y_prob): 
             y_true       True labels
             y_pred:      Predicted Labels
-            y_images:    Images (empty if return_images = False)
             y_prob:      Predicted Probability (empty if return_prob = False)
+            y_images:    Images (empty if return_images = False)
         """
         self.model.to(self.dev)
         self.model.eval()
         y_pred, y_true, y_images, y_prob = [], [], [], [] 
         
         with torch.no_grad():
-            for batch in tqdm(dataloader, desc='Calculate Predictions'):
+            for batch in tqdm(dataloader, desc='Calculate Predictions', disable=disable_pbar):
                 images, labels = batch
                 images, labels = images.to(self.dev), labels.to(self.dev)
                 y_probs = F.softmax(self.model(images), dim = -1)
@@ -224,11 +240,13 @@ class TrainingInterface(CheckPoint):
 
         return (y_true, 
                 y_pred, 
-                y_prob if return_prob else None, 
-                y_images if return_images else None)
+                y_images if return_images else None,
+                y_prob if return_prob else None)
     
     def calculate_metrics(self, dataloader_train: 'torch.Dataloader', 
-                          dataloader_test: 'torch.Dataloader', metric_funcs: list, **metric_kwargs):
+                          dataloader_test: 'torch.Dataloader', metric_funcs: list, 
+                          disable_pbar: bool = False,
+                          **metric_kwargs):
         """
         Calculates Metrics given functions
 
@@ -238,6 +256,7 @@ class TrainingInterface(CheckPoint):
                                    Batch Dataloader of Pytorch for Trainingset
         dataloader_test:           torch.Dataloader
                                    Batch Dataloader of Pytorch for Testset
+        disable_pbar:              If true disables pbar
         metric_funcs:              list of functions (Preferably sklearn.metrics)
 
         return:
@@ -247,7 +266,7 @@ class TrainingInterface(CheckPoint):
         self.model.eval()
         with torch.no_grad():
             y_pred_train, y_true_train = [], []
-            for batch in tqdm(dataloader_train, desc='Predictions Train-Set'):
+            for batch in tqdm(dataloader_train, desc='Predictions Train-Set', disable=disable_pbar):
                 images, labels = batch
                 images, labels = images.to(self.dev), labels.to(self.dev)
                 outputs = self.model(images)
@@ -258,7 +277,7 @@ class TrainingInterface(CheckPoint):
         # On testset
         with torch.no_grad():
             y_pred, y_true= [], []
-            for batch in tqdm(dataloader_test, desc='Predictions Test-Set'):
+            for batch in tqdm(dataloader_test, desc='Predictions Test-Set', disable=disable_pbar):
                 images, labels = batch
                 images, labels = images.to(self.dev), labels.to(self.dev)
                 outputs = self.model(images)
@@ -272,6 +291,9 @@ class TrainingInterface(CheckPoint):
             metrics['train'][func.__name__] = train_score
             test_score = func(y_true=y_true, y_pred=y_pred, **metric_kwargs)
             metrics['test'][func.__name__] = test_score
+            if self.writer != None:
+                self.writer.log({'train' + func.__name__: train_score})
+                self.writer.log({'test' + func.__name__: test_score})
 
         return metrics
 
