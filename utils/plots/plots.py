@@ -32,7 +32,7 @@ class EvaluationPlots:
             if val_loss:
                 plt.subplot(1,2,1)
             p = sns.lineplot(x=np.arange(len(train_loss)), 
-                             y=train_loss, label='Batch Loss')
+                             y=train_loss, label='Loss')
             p.set_title('Training Loss', loc='left')
             p.set_xlabel('Batches')
             p.set_ylabel('Loss')
@@ -40,7 +40,8 @@ class EvaluationPlots:
         if val_loss:
             if train_loss:
                 plt.subplot(1,2,2)
-            p = sns.lineplot(x=np.arange(len(val_loss)), y=val_loss)
+            p = sns.lineplot(x=np.arange(len(val_loss)), y=val_loss,
+                             label='Loss')
             p.set_title('Validation Loss', loc='left')
             p.set_xlabel('Batches')
             p.set_ylabel('Loss')
@@ -57,13 +58,13 @@ class EvaluationPlots:
             y_pred (np.ndarray): _description_
             class_labels (dict): _description_
         """
-        plt.subplots(figsize=(10, 8))
+        plt.subplots(figsize=(8, 8))
         p = sns.heatmap(confusion_matrix(y_true=y_true, y_pred=y_pred), cmap='Blues',
                         xticklabels=class_labels.values(), yticklabels=class_labels.values(), 
                         square=True, annot=True, fmt="d")
 
         p.set_title('Confusion Matrix', loc='left')
-        p.set_xticklabels(p.get_xticklabels(), rotation=20, ha='right')
+        p.set_xticklabels(p.get_xticklabels(), rotation=45, ha='right')
         p.set_xlabel('Predicted')
         p.set_ylabel('True')
 
@@ -146,6 +147,7 @@ class EvaluationPlots:
                 plt.subplots_adjust(hspace=.3)
                 plt.show()
                 break
+            
 
     def plot_pred(y_true, y_pred, y_prob, y_images,n_images,label_dict, incorrect = True):
         """plot images with their predictions and probabilities
