@@ -1,4 +1,4 @@
-# Git Worklfow  
+# Git Workfow  
 
 This file describes our workflow with git and several branches. Additional commands are added for support of the project.
 
