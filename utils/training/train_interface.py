@@ -8,7 +8,8 @@ import numpy as np
 from tqdm.notebook import tqdm
 import torch.nn.functional as F
 import wandb
-
+import PIL
+import pandas as pd
 
 class CheckPoint:
     
@@ -199,7 +200,6 @@ class TrainingInterface(CheckPoint):
                 disable_pbar: bool = False):
         """
         Returns true and predicted labels for prediction
-
         Params:
         ---------
         model:           Pytorch Neuronal Net
@@ -207,7 +207,6 @@ class TrainingInterface(CheckPoint):
         return_images:   If true returns images
         return_prob:     If true returns predicted probabilities
         disable_pbar:    If true disables pbar
-
         returns:
         ----------
         (y_true, y_pred, y_images, y_prob): 
@@ -242,6 +241,47 @@ class TrainingInterface(CheckPoint):
                 y_pred, 
                 y_images if return_images else None,
                 y_prob if return_prob else None)
+    
+    def predict_one(self,imag:torch.Tensor,label_dict: dict, top_n: int = 1):
+        """
+        Returns true and predicted labels for prediction for one image
+        Params:
+        ---------
+        model:           Pytorch Neuronal Net
+        imag:            Image
+        label_dict:      Dictionary of labels
+        top_n:           Number of top predictions to return
+        returns:
+        ----------
+        (y_true, y_pred, y_images, y_prob):
+            y_true       True labels
+            y_pred:      Predicted Labels
+            y_prob:      Predicted Probability (empty if return_prob = False)
+            y_images:    Images (empty if return_images = False)
+        """
+        
+        self.model.to(self.dev)
+        self.model.eval()
+        
+        image = imag.to(self.dev)
+        y_prob = []
+        with torch.no_grad():
+            y_probs = F.softmax(self.model(image), dim = -1) 
+            y_prob.append(y_probs.cpu()) 
+        y_prob = torch.cat(y_prob, dim = 0)
+        y_prob = y_prob[0]
+        n_classes, n_probs = [], []
+        example_prob, example_label = torch.sort(y_prob, dim=0)
+        for i in range(top_n):
+            label = example_label[-i-1]
+            n_classes.append(list(label_dict.keys())[list(label_dict.values()).index(label)])
+            n_probs.append(float(example_prob[-i-1]))
+        zipped = list(zip(n_classes, n_probs))
+        df = pd.DataFrame(zipped, columns=['Prediction', 'Probability'])
+        df.index += 1 
+        result = df.to_dict('index')
+        return result
+
     
     def calculate_metrics(self, dataloader_train: 'torch.Dataloader', 
                           dataloader_test: 'torch.Dataloader', metric_funcs: list, 
