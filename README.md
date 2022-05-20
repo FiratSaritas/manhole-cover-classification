@@ -6,17 +6,18 @@ The available images are all unlabelled. Now we have to find a solution to ensur
 
 ## Getting Started
 
+### Installation
+Clone project locally
+ ```sh
+    git@github.com:FiratSaritas/manhole-cover-classification.git
+ ```
+
 ### Prerequisites 
 Install required packages
  ```sh
     pip install requirements.txt
  ```
 
-### Installation
-Clone project locally
- ```sh
-    git@github.com:FiratSaritas/manhole-cover-classification.git
- ```
 ### Run project
 
 ### Run test
@@ -26,6 +27,6 @@ This project is still in progress.
 
 ## Contact
 
-firat.saritas@students.fhnw.ch
-simon.staehli@students.fhnw.ch
+firat.saritas@students.fhnw.ch<br />
+simon.staehli@students.fhnw.ch<br />
 kajenthini.kobivasan@students.fhnw.ch
