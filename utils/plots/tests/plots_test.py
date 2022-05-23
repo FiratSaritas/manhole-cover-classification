@@ -1,49 +1,18 @@
 import unittest
-from matplotlib import pyplot as plt
-import seaborn as sns
-import pandas as pd
-import numpy as np
 import torch
 from torchvision import transforms as transforms
-from sklearn.metrics import precision_score,recall_score,f1_score
-from sklearn.metrics import confusion_matrix
-from torchvision.transforms.functional import to_pil_image
 
 
+import sys
+sys.path.append('../')
 from plots import EvaluationPlots
 from unittest.mock import patch
 import pickle
-#import sys
-#sys.path.append('../../')
-#from utils import get_dataloader
 
-
-pkl_url_file = "../dataset/label_translate.pkl"
-#root_dir = "../data/images_transformed/"
-#df = pd.read_csv("../../data/labels.csv")
+pkl_url_file = "../../dataset/label_translate.pkl"
 
 with open(pkl_url_file, 'rb') as pkl_file:
     label_dict = pickle.load(pkl_file)
-
-#model = torch.load('../../model/model_resnet152.pth')
-#my_transforms = transforms.Compose(
-#        [
-#            transforms.Resize(224),
-#            transforms.ToTensor(),
-#        ]
-#    )
-#testloader = get_dataloader(
-#    root_dir=root_dir,
-#    df=df[df.set =="test"],
-#    fp_label_translator=pkl_url_file,
-#    transformations=my_transforms,
-#    batch_size=32,
-#    workers=0,
-#    pin_memory=True,
-#    shuffle=False
-#)
-
-
 
 class TestEvaluationPlots(unittest.TestCase):
     #test if plot_train_val_loss works with train_loss and/or val_loss as list or array
