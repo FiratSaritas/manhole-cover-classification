@@ -1,7 +1,8 @@
 # manhole-cover-classification
 
-![ezgif-5-79d7edeae3](https://user-images.githubusercontent.com/82641568/169883002-414c9e26-df8f-4336-93bf-b7a900512964.gif)
-![ezgif-5-f24a96b372](https://user-images.githubusercontent.com/82641568/169883006-544c72d9-800b-4c6b-bc94-53e3a64550e5.gif)
+![ezgif-4-b657bbd0b1](https://user-images.githubusercontent.com/82641568/169886162-626b7faf-20ef-469b-ae19-8d1b06e74683.gif)
+![ezgif-5-35c28f41eb](https://user-images.githubusercontent.com/82641568/169886048-32407b46-122a-4614-bbc0-123ecd151809.gif)
+![ezgif-4-1abd2a1947](https://user-images.githubusercontent.com/82641568/169886404-4e68385d-f0f9-4674-871d-7cc4c3b0c60b.gif)
 
 
 ## About project
