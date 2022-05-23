@@ -22,6 +22,12 @@ Install required packages
 
 ### Run test
 
+There are tests for the outsourced python files. These python files are located in the "utils" folder. There are subfolders of the corresponding classes (e.g. dataset). There is a folder with the name "tests" and there are the unittests. 
+You can run a test with the following code:
+```sh
+    python -m unittest [name of the testfile]
+ ```
+
 ## Project status
 This project is still in progress.
 
