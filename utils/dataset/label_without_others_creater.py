@@ -19,6 +19,15 @@ label_translate_1 = {
 }
 
 def label_save(label_translate, name):
+    """save label_translate as pickle file
+
+    Parameters
+    ----------
+    label_translate : dictionary
+        dictionary with key as label and value as index
+    name : string
+        name of the pickle file
+    """
     with open(name, 'wb') as f:
         pickle.dump(label_translate, f)
 
