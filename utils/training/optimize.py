@@ -41,6 +41,7 @@ def init_transforms(ra_num_ops: int, ra_magnitude: int):
     )
 
     test_transformations = transforms.Compose(
+
         [
             transforms.Resize(224),
             transforms.ToTensor(),
@@ -58,6 +59,7 @@ def init_transforms(ra_num_ops: int, ra_magnitude: int):
         ]
     )
     return (train_transformations, test_transformations, inverse_transforms)
+
     
 
 def load_and_get_weights_train(df): 
@@ -101,6 +103,7 @@ def get_max_score_from_epoch(scores, epoch_space):
 def main(wandb):
     
     print(20*'-', 'Load History', 20*'-')
+
     if 'sample_history.pkl' in os.listdir():
         with open('sample_history.pkl', 'rb') as pkl_file:
             sample_history = pickle.load(pkl_file)
@@ -320,3 +323,4 @@ if __name__ == '__main__':
         main(run)
         run.finish()
         iteration += 1
+        

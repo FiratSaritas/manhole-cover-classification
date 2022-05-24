@@ -1,0 +1,23 @@
+# Location Params
+FROM_FOLDER: '../../data/train/'
+TO_FOLDER: '../../data/interim_train/'
+DF_PATH: '../../data/trans_labels.csv'
+
+# Transformation Params
+## Current IMage size
+IMAGE_SIZE: 500 
+## Get rid of black boarder around the image
+REDUCE_PIXEL_CROP: 120 
+## Resize on this size
+RESIZE: 256
+## Number of transforms in sequence (Only applicable if not given Key)
+RANDOM_APPLY_N: 2
+RANDOM_REPLACE: False
+RANDOM_REUSE_TRANSFORM: False
+
+# Multiprocessing parmas
+GIVEN_KEY: True
+N_PROCESSES: 5
+
+# Set test Parameter
+TEST_ONLY: False
