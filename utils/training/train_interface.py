@@ -35,7 +35,7 @@ class CheckPoint:
         model = torch.load(os.path.join(self.history_folder,  f'{self.name}_{epoch}'))
         if inplace:
             self.model = torch.load(os.path.join(self.history_folder,  f'{self.name}_{epoch}'))
-            print(f'Replaced self.model -> epoch {epoch}')
+            #print(f'Replaced self.model -> epoch {epoch}')
         else:
             return model
 
@@ -76,7 +76,7 @@ class TrainingInterface(CheckPoint):
         self.val_loss = []
         self.train_epoch_loss = []
         self.val_epoch_loss = []
-        
+        self.scores_at_epoch = []
 
     def print_network(self):
         """
@@ -102,7 +102,8 @@ class TrainingInterface(CheckPoint):
             return '{}\n{}\n{}'.format(50 * '=', pytorch_total_params, 50 * '=')
         
     def train(self, criterion, optimizer, n_epochs, dataloader_train, 
-                      dataloader_val=None, epsilon=.0001, verbose=True):
+              dataloader_val=None, epsilon=.0001, verbose=True, 
+              score_func = None, **score_func_kwargs):
         """
         Trains a neural Network with given inputs and parameters.
 
@@ -154,10 +155,13 @@ class TrainingInterface(CheckPoint):
                 self.train_epoch_loss.append(running_loss)
                 if self.writer != None:
                     self.writer.log({'train_epoch_loss': running_loss})
+                    self.writer.log({'epoch': self.epoch})
+                    
 
                 if dataloader_val:
                     length_dataloader_val = len(dataloader_val)
                     val_loss = 0.
+                    y_prob, y_true= [], []
                     for i, data in enumerate(dataloader_val):
                         pbar.set_description(f'Epoch: {epoch+1}/{n_epochs} // Eval-Loop: {i+1}/{length_dataloader_val}')
                         self.model.eval()
@@ -166,16 +170,35 @@ class TrainingInterface(CheckPoint):
                         inputs, labels = inputs.to(self.dev), labels.to(self.dev)
                         with torch.no_grad():
                             outputs = self.model(inputs)
+                            y_probs = F.softmax(outputs, dim = -1)
                             eval_loss = criterion(outputs, labels)
                             val_loss += eval_loss.item()
                             self.val_loss.append(eval_loss.item())
+                            
+                            # calculate scoring
+                            y_prob.append(y_probs.cpu()) 
+                            y_true.append(labels.cpu())
+                        
                             if self.writer != None:
                                 self.writer.log({'val_batch_loss': eval_loss.item()})
                         self.model.train()  
+                    
+                    if score_func:
+                        y_true = torch.cat(y_true, dim = 0)
+                        y_prob = torch.cat(y_prob, dim = 0)
+                        y_pred = torch.argmax(y_prob, 1)
+                        score = score_func(y_true, y_pred, **score_func_kwargs)
+                        self.scores_at_epoch.append(score)
+                    
                     self.val_epoch_loss.append(val_loss)
                     
                     if self.writer != None:
                         self.writer.log({'val_epoch_loss': val_loss})
+                        self.writer.log({'epoch': self.epoch})
+                        if score_func:
+                            self.writer.log({'epoch_val_score': score})
+                            self.writer.log({'best_val_score': np.argmax(self.scores_at_epoch)})
+                            self.writer.log({'best_score_at_epoch': np.max(self.scores_at_epoch)})
                 
                 # Update epoch
                 self.epoch += 1
@@ -332,9 +355,9 @@ class TrainingInterface(CheckPoint):
             test_score = func(y_true=y_true, y_pred=y_pred, **metric_kwargs)
             metrics['test'][func.__name__] = test_score
             if self.writer != None:
-                self.writer.log({'train' + func.__name__: train_score})
-                self.writer.log({'test' + func.__name__: test_score})
-
+                self.writer.log({'train_' + func.__name__: train_score})
+                self.writer.log({'test_' + func.__name__: test_score})
+                
         return metrics
 
     
