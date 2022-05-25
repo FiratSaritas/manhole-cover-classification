@@ -51,10 +51,8 @@ class MHCoverDataset(Dataset):
         self._images = np.array([img for img in os.listdir(self.root_dir) if '.png' in img])
         
         # Only select thos images within the dataframe        
-        assert self.df.shape[0] == self._images.shape[0], f'{self.df.shape[0]} - {self._images.shape[0]}'
-        
-        return self
-    
+        #assert self.df.shape[0] == self._images.shape[0], f'{self.df.shape[0]} - {self._images.shape[0]}'
+            
     def label_encode(self, X):
         if type(X) == list:
             return [self.label_dict_r[lab] for lab in X]
@@ -71,18 +69,21 @@ class MHCoverDataset(Dataset):
             idx = idx.tolist()
 
         # Load image
-        img_path = os.path.join(self.root_dir, self._images[idx])
+        image = self.df.loc[idx, 'image']
+        #img_path = os.path.join(self.root_dir, self._images[idx])
+        img_path = os.path.join(self.root_dir, image)
         image = PIL.Image.open(img_path)
         if self.transform:
             image = self.transform(image)
 
         # Load label        
-        label = self.df.loc[self.df['image'] == self._images[idx], self.label_indexer].to_list()
+        label = self.df.loc[idx, self.label_indexer]
+        #label = self.df.loc[self.df['image'] == self._images[idx], self.label_indexer].to_list()
         
-        assert len(label) == 1
+        #assert len(label) == 1
+        #return image, self.label_dict[label[0]] 
         
-                
-        return image, self.label_dict[label[0]]
+        return image, self.label_dict[label]
 
 
 def get_dataloader(root_dir: str, df: pd.DataFrame, transformations: 'transforms.Compose', 
