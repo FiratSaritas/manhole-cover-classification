@@ -9,6 +9,30 @@
 The aim of this project is to develop an image classification model, which should be able to classify different types of manhole covers . We don't have enough images to train the model. Sometimes we also have pictures of water pipe covers instead of manhole covers.
 The available images are all unlabelled. Now we have to find a solution to ensure correct classification of manhole covers.
 
+## Folder Structure Conventions
+
+```
+    ├── Checklists             # Checklists for a clean code and project (files type: pdf)
+    ├── augmentation           # Use of different data augmentations (files type: ipynb)
+    ├── data                   # Data of the project (files type: csv)
+    │   ├── archive
+    ├── eda                    # Exploratory data analysis (files type: ipynb)
+    ├── model                  # Different trained models (files type: ipynb)
+    │   ├── final              # Calls final model and makes a prediction (files type: py)
+    ├── utils                  # outsourced functions (files type: py)
+    │   ├── archive
+    │   ├── dataset            # dataset functions (files type: py)
+    │   │   ├── tests
+    │   ├── plots              # plot functions (files type: py)
+    │   │   ├── tests
+    │   ├── training           # training functions (files type: py)
+    │   │   ├── tests
+    └── README.md             
+    └── git_workflow.md
+    └── requirements.txt
+```
+
+
 ## Getting Started
 
 ### Installation
