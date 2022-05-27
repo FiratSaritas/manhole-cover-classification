@@ -32,7 +32,6 @@ The available images are all unlabelled. Now we have to find a solution to ensur
     └── requirements.txt
 ```
 
-
 ## Getting Started
 
 ### Installation
@@ -40,6 +39,18 @@ Clone project locally
  ```sh
     git@github.com:FiratSaritas/manhole-cover-classification.git
  ```
+
+### Downloads
+
+#### Model:
+Download model from Google Drive and add it to the folder ./model here:
+**link** (not ready yet)
+
+#### Images (optional):
+Download images as Folder (images_transformed) from Google Drive and add it to the folder ./data here:
+**link** (not ready yet)
+
+
 
 ### Prerequisites 
 Install required packages
