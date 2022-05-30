@@ -48,7 +48,7 @@ Download model from Google Drive and add it to the folder ./model here:
 
 #### Images (optional):
 Download images as Folder (images_transformed) from Google Drive and add it to the folder ./data here:
-[**link** (not ready yet)](https://drive.google.com/drive/folders/1y5T1-WUZB1Vsp87aBiU6hDxagiY2mGgi?usp=sharing)
+(https://drive.google.com/drive/folders/1y5T1-WUZB1Vsp87aBiU6hDxagiY2mGgi?usp=sharing)
 
 
 
