@@ -120,26 +120,26 @@ def main(wandb):
     hyper_space = None
     while hyper_space in sample_history:
         ## Sampler
-        WEIGHTED_SAMPLER = np.random.choice([True, False])
+        WEIGHTED_SAMPLER = False
         SAMPLER_NUM_SAMPLES = np.random.randint(1000, 3000)
         SAMPLER_REPLACEMENT = True
 
         ## General
         WORKERS = 20
-        BATCH_SIZE = int(np.random.choice([16, 32, 64, 128]))
+        BATCH_SIZE = int(np.random.choice([16, 32]))
 
         ## Model
         PRETRAINED = True
 
         ## Training
         LR = np.random.uniform(.000001, .0001)
-        WEIGHT_DECAY = np.random.uniform(.2, .6)
-        WEIGHTED_LOSS = np.random.choice([True, False])
+        WEIGHT_DECAY = np.random.uniform(.2, .4)
+        WEIGHTED_LOSS = True
         #EPOCHS = 2
         EPOCHS = 120
 
         # RandAugment Param
-        NUM_OPS = np.random.randint(1, 4)
+        NUM_OPS = np.random.randint(2, 4)
         MAGNITUDE = np.random.randint(4, 10)
 
         hyper_space = [WEIGHTED_SAMPLER, SAMPLER_NUM_SAMPLES, PRETRAINED, 
