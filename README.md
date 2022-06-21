@@ -55,7 +55,7 @@ Download images as Folder (images_transformed) from Google Drive and add it to t
 ### Prerequisites 
 Install required packages
  ```sh
-    pip install requirements.txt
+    pip install -r requirements.txt
  ```
 
 ### Run project
