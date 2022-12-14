@@ -68,9 +68,6 @@ You can run a test with the following code:
     python -m unittest [name of the testfile]
  ```
 
-## Project status
-This project is still in progress.
-
 ## Contact
 
 firat.saritas@students.fhnw.ch<br />
