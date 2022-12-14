@@ -67,9 +67,3 @@ You can run a test with the following code:
 ```sh
     python -m unittest [name of the testfile]
  ```
-
-## Contact
-
-firat.saritas@students.fhnw.ch<br />
-simon.staehli@students.fhnw.ch<br />
-kajenthini.kobivasan@students.fhnw.ch
